@@ -6,6 +6,7 @@ class RacesController < ApplicationController
   def dwarf
     {
       name: 'Dwarf',
+      identifier: :dwarf,
       ability_scores: [con: 2],
       age_range: (50..350),
       recommended_alignments: [:lawful, :good],
@@ -49,6 +50,7 @@ class RacesController < ApplicationController
   def elf
     {
       name: 'Elf',
+      identifier: :elf,
       ability_scores: { dex: 2 },
       age_range: (100..750),
       alignemnt: [:chaotic, :good],
@@ -144,6 +146,7 @@ class RacesController < ApplicationController
   def halfling
     {
       name: 'Halfling',
+      identifier: :halfling,
       ability_scores: [dex: 2],
       age_range: [20..150],
       recommended_alignments: [:lawful, :good],
@@ -199,6 +202,15 @@ class RacesController < ApplicationController
   def human
     {
       name: 'Human',
+      identifier: :human,
+      description: "In the reckonings of most worlds, humans are the youngest of the common
+        races, late to arrive on the world scene and short-lived in comparison
+        to dwarves, elves, and dragons. Perhaps it is because of their shorter
+        lives that they strive to achieve as much as they can in the years they
+        are given. Or maybe they feel they have something to prove to the elder
+        races, and that's why they build their mighty empires on the foundation
+        of conquest and trade. Whatever drives them, humans are innovators, the
+        achievers, and the pioneers of the worlds.",
       laguanges: {
         start: [:common, :any]
       },
@@ -209,12 +221,14 @@ class RacesController < ApplicationController
       age_range: (15..100),
       variants: [
         {
-          description: 'Your ability scores each increase by 1.',
+          name: 'Your ability scores each increase by 1.',
           ability_scores: { str: 1, dex: 1, con: 1, cha: 1, wis: 1, int: 1 },
         },
         {
-          description: 'Two, ability scores of your choice increase by 1, one skill proficiency, one feat.',
+          name: 'Two ability scores of your choice increase by 1, one skill proficiency, one feat.',
           distinct_ability_scores: 2,
+          skill_proficiences: [:any],
+          feats: [:any]
         }
       ]
     }

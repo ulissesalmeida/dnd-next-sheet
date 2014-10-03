@@ -22,11 +22,9 @@
     <h1>Races</h1>
 
     <ul class='races-list'>
-      <li class='races-list-item dwarf'>Dwarf</li>
-      <li class='races-list-item elf'>Elf</li>
-      <li class='races-list-item halfling'>Halfling</li>
-      <li class='races-list-item human selected'>Human</li>
-      <li class='races-list-item halfling'>Halfling</li>
+      <% @races.each do |race| %>
+        <%= content_tag :li, race[:name], class: ['races-list-item', race[:identifier]] %>
+      <% end %>
     </ul>
 
     <h3>Choose your variant:</h3>
