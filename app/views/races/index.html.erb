@@ -23,7 +23,7 @@
 
     <ul class='races-list'>
       <% @races.each do |race| %>
-        <%= content_tag :li, race[:name], class: ['races-list-item', race[:identifier]] %>
+        <%= content_tag :li, race[:name], class: ['races-list-item', race[:slug]] %>
       <% end %>
     </ul>
 
@@ -43,6 +43,3 @@
     </ul>
   </div>
 </section>
-
-
-
