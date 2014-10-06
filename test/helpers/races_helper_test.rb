@@ -14,4 +14,10 @@ class RacesHelperTest < ActionView::TestCase
 
     assert_equal(['Became mature when reach the age of 1. They can live about 10 years.'], traits)
   end
+
+  test 'should format the recommended alignments' do
+    traits = traits_for(recommended_alignments: [:any, :lawful])
+
+    assert_equal(['Any alignment and Lawful'], traits)
+  end
 end
