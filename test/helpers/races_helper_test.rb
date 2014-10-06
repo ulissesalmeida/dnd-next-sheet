@@ -6,7 +6,7 @@ class RacesHelperTest < ActionView::TestCase
   test 'should format the abilities score' do
     traits = traits_for(ability_scores: { con: 1, dex: 2, str: 3 })
 
-    assert_equal(['Constitution + 1 | Dexterity + 2 | Strength + 3'], traits)
+    assert_equal(['Constitution + 1, Dexterity + 2, and Strength + 3'], traits)
   end
 
   test 'should format the age range' do

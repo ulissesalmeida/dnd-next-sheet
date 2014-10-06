@@ -19,7 +19,7 @@ module RacesHelper
     safe_ability_scores = Hash(ability_scores)
     safe_ability_scores.map do |ability, score|
       "#{ABILITY_MAP[ability]} + #{score}"
-    end.join(' | ')
+    end.to_sentence
   end
 
   def format_age_range(age_range)
