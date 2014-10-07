@@ -14,7 +14,8 @@ module RacesHelper
       trait_with_label('Age', format_age_range(race[:age_range])),
       trait_with_label('Recomended alignments', format_recommended_alignments(race[:recommended_alignments])),
       trait_with_label('Size', format_game_size(race[:game_size])),
-      trait_with_label('Speed', format_speed(race[:speed]))
+      trait_with_label('Speed', format_speed(race[:speed])),
+      trait_with_label('Weapon Proficiences', format_weapon_proficiences(race[:weapon_proficiences]))
     ].select(&:present?)
   end
 
@@ -54,5 +55,10 @@ module RacesHelper
     if speed
       "#{speed} feet"
     end
+  end
+
+  def format_weapon_proficiences(weapon_proficiences)
+    safe_weapon_proficiences = Array(weapon_proficiences)
+    safe_weapon_proficiences.map { |weapon| weapon.to_s.humanize.titleize }.to_sentence
   end
 end

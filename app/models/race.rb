@@ -22,7 +22,7 @@ class Race
     size_range: (4..5), #foot,
     game_size: :medium,
     speed: 25, #foot
-    weapon_proficiences: [:battleaxe, :handaxe, :thowing_hammer, :warhammer],
+    weapon_proficiences: [:battleaxe, :handaxe, :throwing_hammer, :warhammer],
     distinct_tool_proficiences: [:smith, :brewer, :mason],
     languages: {
       start: [:common, :dwarvish]

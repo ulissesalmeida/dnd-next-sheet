@@ -32,4 +32,10 @@ class RacesHelperTest < ActionView::TestCase
 
     assert_equal(['Speed', '30 feet'], traits)
   end
+
+  test 'should format the weapon proficiences' do
+    traits = traits_for(weapon_proficiences: [:handaxe, :throwing_hammer]).first
+
+    assert_equal(['Weapon Proficiences', 'Handaxe and Throwing Hammer'], traits)
+  end
 end
