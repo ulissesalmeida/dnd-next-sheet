@@ -20,4 +20,10 @@ class RacesHelperTest < ActionView::TestCase
 
     assert_equal(['Any alignment and Lawful'], traits)
   end
+
+  test 'should format the game size' do
+    traits = traits_for(game_size: :medium)
+
+    assert_equal(['Medium'], traits)
+  end
 end

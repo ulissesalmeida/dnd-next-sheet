@@ -12,7 +12,8 @@ module RacesHelper
     [
       format_abilities_scores(race[:ability_scores]),
       format_age_range(race[:age_range]),
-      format_recommended_alignments(race[:recommended_alignments])
+      format_recommended_alignments(race[:recommended_alignments]),
+      format_game_size(race[:game_size])
     ].select(&:present?)
   end
 
@@ -34,5 +35,11 @@ module RacesHelper
     safe_alignments.map do |alignment|
       alignment == :any ? 'Any alignment' : alignment.to_s.titleize
     end.to_sentence
+  end
+
+  def format_game_size(game_size)
+    if game_size
+      game_size.to_s.titleize
+    end
   end
 end
