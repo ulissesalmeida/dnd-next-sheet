@@ -4,26 +4,26 @@ class RacesHelperTest < ActionView::TestCase
   include RacesHelper
 
   test 'should format the abilities score' do
-    traits = traits_for(ability_scores: { con: 1, dex: 2, str: 3 })
+    traits = traits_for(ability_scores: { con: 1, dex: 2, str: 3 }).first
 
-    assert_equal(['Constitution + 1, Dexterity + 2, and Strength + 3'], traits)
+    assert_equal(['Ability Scores', 'Constitution + 1, Dexterity + 2, and Strength + 3'], traits)
   end
 
   test 'should format the age range' do
-    traits = traits_for(age_range: (1..10))
+    traits = traits_for(age_range: (1..10)).first
 
-    assert_equal(['Became mature when reach the age of 1. They can live about 10 years.'], traits)
+    assert_equal(['Age', 'Became mature when reach the age of 1. They can live about 10 years.'], traits)
   end
 
   test 'should format the recommended alignments' do
-    traits = traits_for(recommended_alignments: [:any, :lawful])
+    traits = traits_for(recommended_alignments: [:any, :lawful]).first
 
-    assert_equal(['Any alignment and Lawful'], traits)
+    assert_equal(['Recomended alignments', 'Any alignment and Lawful'], traits)
   end
 
   test 'should format the game size' do
-    traits = traits_for(game_size: :medium)
+    traits = traits_for(game_size: :medium).first
 
-    assert_equal(['Medium'], traits)
+    assert_equal(['Size', 'Medium'], traits)
   end
 end

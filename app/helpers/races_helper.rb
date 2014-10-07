@@ -10,14 +10,20 @@ module RacesHelper
 
   def traits_for(race)
     [
-      format_abilities_scores(race[:ability_scores]),
-      format_age_range(race[:age_range]),
-      format_recommended_alignments(race[:recommended_alignments]),
-      format_game_size(race[:game_size])
+      trait_with_label('Ability Scores', format_ability_scores(race[:ability_scores])),
+      trait_with_label('Age', format_age_range(race[:age_range])),
+      trait_with_label('Recomended alignments', format_recommended_alignments(race[:recommended_alignments])),
+      trait_with_label('Size', format_game_size(race[:game_size]))
     ].select(&:present?)
   end
 
-  def format_abilities_scores(ability_scores)
+  def trait_with_label(label, value)
+    if value.present?
+      [label, value]
+    end
+  end
+
+  def format_ability_scores(ability_scores)
     safe_ability_scores = Hash(ability_scores)
     safe_ability_scores.map do |ability, score|
       "#{ABILITY_MAP[ability]} + #{score}"
