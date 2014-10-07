@@ -26,4 +26,10 @@ class RacesHelperTest < ActionView::TestCase
 
     assert_equal(['Size', 'Medium'], traits)
   end
+
+  test 'should format the speed' do
+    traits = traits_for(speed: 30).first
+
+    assert_equal(['Speed', '30 feet'], traits)
+  end
 end

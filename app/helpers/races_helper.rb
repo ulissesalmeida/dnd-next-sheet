@@ -13,7 +13,8 @@ module RacesHelper
       trait_with_label('Ability Scores', format_ability_scores(race[:ability_scores])),
       trait_with_label('Age', format_age_range(race[:age_range])),
       trait_with_label('Recomended alignments', format_recommended_alignments(race[:recommended_alignments])),
-      trait_with_label('Size', format_game_size(race[:game_size]))
+      trait_with_label('Size', format_game_size(race[:game_size])),
+      trait_with_label('Speed', format_speed(race[:speed]))
     ].select(&:present?)
   end
 
@@ -46,6 +47,12 @@ module RacesHelper
   def format_game_size(game_size)
     if game_size
       game_size.to_s.titleize
+    end
+  end
+
+  def format_speed(speed)
+    if speed
+      "#{speed} feet"
     end
   end
 end
