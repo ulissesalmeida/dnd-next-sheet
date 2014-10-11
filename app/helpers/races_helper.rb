@@ -15,7 +15,8 @@ module RacesHelper
       trait_with_label('Recomended alignments', format_recommended_alignments(race[:recommended_alignments])),
       trait_with_label('Size', format_game_size(race[:game_size])),
       trait_with_label('Speed', format_speed(race[:speed])),
-      trait_with_label('Weapon Proficiences', format_weapon_proficiences(race[:weapon_proficiences]))
+      trait_with_label('Weapon Proficiences', format_items(race[:weapon_proficiences])),
+      trait_with_label('One tool proficiency of', format_items(race[:distinct_tool_proficiences]))
     ].select(&:present?)
   end
 
@@ -57,8 +58,8 @@ module RacesHelper
     end
   end
 
-  def format_weapon_proficiences(weapon_proficiences)
-    safe_weapon_proficiences = Array(weapon_proficiences)
-    safe_weapon_proficiences.map { |weapon| weapon.to_s.humanize.titleize }.to_sentence
+  def format_items(items)
+    safe_items = Array(items)
+    safe_items.map { |item| item.to_s.humanize.titleize }.to_sentence
   end
 end

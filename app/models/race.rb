@@ -19,9 +19,8 @@ class Race
     ability_scores: [con: 2],
     age_range: (50..350),
     recommended_alignments: [:lawful, :good],
-    size_range: (4..5), #foot,
     game_size: :medium,
-    speed: 25, #foot
+    speed: 25
     weapon_proficiences: [:battleaxe, :handaxe, :throwing_hammer, :warhammer],
     distinct_tool_proficiences: [:smith, :brewer, :mason],
     languages: {

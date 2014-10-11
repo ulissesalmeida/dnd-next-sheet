@@ -38,4 +38,10 @@ class RacesHelperTest < ActionView::TestCase
 
     assert_equal(['Weapon Proficiences', 'Handaxe and Throwing Hammer'], traits)
   end
+
+  test 'should format the distinct tools proficiences' do
+    traits = traits_for(distinct_tool_proficiences: [:smith, :brewer]).first
+
+    assert_equal(['One tool proficiency of', 'Smith and Brewer'], traits)
+  end
 end
