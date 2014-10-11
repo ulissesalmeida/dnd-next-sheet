@@ -128,7 +128,7 @@ class Race
         ],
         race_spells: {
           attribute: :cha,
-          can_trips: [:dancing_lights],
+          cantrips: [:dancing_lights],
           levels: [
             {
               level: 3,
@@ -152,7 +152,6 @@ class Race
     ability_scores: [dex: 2],
     age_range: [20..150],
     recommended_alignments: [:lawful, :good],
-    size_range: (2.9..3.1), #feet
     game_size: :small,
     speed: 25, #feet
     languages: [:common, :halfling],
@@ -214,7 +213,6 @@ class Race
     laguanges: [:common, :any],
     speed: 30, #foot
     game_size: :medium,
-    size_range: (5..6), #feet
     recommended_alignments: :any,
     age_range: (15..100),
     race_variants: [
