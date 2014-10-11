@@ -20,7 +20,7 @@ class Race
     age_range: (50..350),
     recommended_alignments: [:lawful, :good],
     game_size: :medium,
-    speed: 25
+    speed: 25,
     weapon_proficiences: [:battleaxe, :handaxe, :throwing_hammer, :warhammer],
     distinct_tool_proficiences: [:smith, :brewer, :mason],
     languages: [:common, :dwarvish],
