@@ -61,8 +61,7 @@ class Race
     age_range: (100..750),
     alignemnt: [:chaotic, :good],
     game_size: :medium,
-    size_range: (5..6), #feet
-    speed: 30, #foot
+    speed: 30,
     skill_proficiences: [:perception],
     languages: [:common, :elvish],
     race_powers: [

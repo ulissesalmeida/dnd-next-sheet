@@ -50,4 +50,10 @@ class RacesHelperTest < ActionView::TestCase
 
     assert_equal(['Languages', 'Common and One extra of your choice'], traits)
   end
+
+  test 'should format the extra hit points per level' do
+    traits = traits_for(extra_hit_points_per_level: 2).first
+
+    assert_equal(['Extra HP per level', '+ 2'], traits)
+  end
 end

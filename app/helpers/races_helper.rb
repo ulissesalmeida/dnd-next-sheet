@@ -17,7 +17,8 @@ module RacesHelper
       trait_with_label('Speed', format_speed(race[:speed])),
       trait_with_label('Weapon Proficiences', format_items(race[:weapon_proficiences])),
       trait_with_label('One tool proficiency of', format_items(race[:distinct_tool_proficiences])),
-      trait_with_label('Languages', format_items(race[:languages]))
+      trait_with_label('Languages', format_items(race[:languages])),
+      trait_with_label('Extra HP per level', format_bonus(race[:extra_hit_points_per_level]))
     ].select(&:present?)
   end
 
@@ -56,6 +57,12 @@ module RacesHelper
   def format_speed(speed)
     if speed
       "#{speed} feet"
+    end
+  end
+
+  def format_bonus(value)
+    if value
+      "+ #{value}"
     end
   end
 
