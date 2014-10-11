@@ -16,7 +16,8 @@ module RacesHelper
       trait_with_label('Size', format_game_size(race[:game_size])),
       trait_with_label('Speed', format_speed(race[:speed])),
       trait_with_label('Weapon Proficiences', format_items(race[:weapon_proficiences])),
-      trait_with_label('One tool proficiency of', format_items(race[:distinct_tool_proficiences]))
+      trait_with_label('One tool proficiency of', format_items(race[:distinct_tool_proficiences])),
+      trait_with_label('Languages', format_items(race[:languages]))
     ].select(&:present?)
   end
 
@@ -42,13 +43,13 @@ module RacesHelper
   def format_recommended_alignments(alignments)
     safe_alignments = Array(alignments)
     safe_alignments.map do |alignment|
-      alignment == :any ? 'Any alignment' : alignment.to_s.titleize
+      alignment == :any ? 'Any alignment' : format_item(alignment)
     end.to_sentence
   end
 
   def format_game_size(game_size)
     if game_size
-      game_size.to_s.titleize
+      format_item(game_size)
     end
   end
 
@@ -60,6 +61,12 @@ module RacesHelper
 
   def format_items(items)
     safe_items = Array(items)
-    safe_items.map { |item| item.to_s.humanize.titleize }.to_sentence
+    safe_items.map do |item|
+      item == :any ? 'One extra of your choice' : format_item(item)
+    end.to_sentence
+  end
+
+  def format_item(item)
+    item.to_s.humanize.titleize
   end
 end

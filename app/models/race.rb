@@ -23,9 +23,7 @@ class Race
     speed: 25
     weapon_proficiences: [:battleaxe, :handaxe, :throwing_hammer, :warhammer],
     distinct_tool_proficiences: [:smith, :brewer, :mason],
-    languages: {
-      start: [:common, :dwarvish]
-    },
+    languages: [:common, :dwarvish],
     race_powers: [
       {
         name: 'Dwarven Resilience',
@@ -66,9 +64,7 @@ class Race
     size_range: (5..6), #feet
     speed: 30, #foot
     skill_proficiences: [:perception],
-    languages: {
-      start: [:common, :elvish]
-    },
+    languages: [:common, :elvish],
     race_powers: [
       {
         name: 'Darkvision',
@@ -96,9 +92,7 @@ class Race
           attribute: :int,
           cantrips: [:a_wizard_cantrip]
         },
-        languages: [
-          start: [:any]
-        ]
+        languages: [:any]
       },
       {
         name: 'Wood Elf',
@@ -162,9 +156,7 @@ class Race
     size_range: (2.9..3.1), #feet
     game_size: :small,
     speed: 25, #feet
-    languages: [
-      start: [:common, :halfling]
-    ],
+    languages: [:common, :halfling],
     race_powers: [
       {
         name: 'Lucky',
@@ -220,9 +212,7 @@ class Race
       races, and that's why they build their mighty empires on the foundation
       of conquest and trade. Whatever drives them, humans are innovators, the
       achievers, and the pioneers of the worlds.",
-    laguanges: {
-      start: [:common, :any]
-    },
+    laguanges: [:common, :any],
     speed: 30, #foot
     game_size: :medium,
     size_range: (5..6), #feet
