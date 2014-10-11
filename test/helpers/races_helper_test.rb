@@ -56,4 +56,10 @@ class RacesHelperTest < ActionView::TestCase
 
     assert_equal(['Extra HP per level', '+ 2'], traits)
   end
+
+  test 'should format the armor proficiences' do
+    traits = traits_for(armor_proficiences: [:light, :heavy]).first
+
+    assert_equal(['Armor Proficiences', 'Light and Heavy'], traits)
+  end
 end

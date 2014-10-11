@@ -18,7 +18,8 @@ module RacesHelper
       trait_with_label('Weapon Proficiences', format_items(race[:weapon_proficiences])),
       trait_with_label('One tool proficiency of', format_items(race[:distinct_tool_proficiences])),
       trait_with_label('Languages', format_items(race[:languages])),
-      trait_with_label('Extra HP per level', format_bonus(race[:extra_hit_points_per_level]))
+      trait_with_label('Extra HP per level', format_bonus(race[:extra_hit_points_per_level])),
+      trait_with_label('Armor Proficiences', format_items(race[:armor_proficiences]))
     ].select(&:present?)
   end
 
