@@ -210,7 +210,7 @@ class Race
       races, and that's why they build their mighty empires on the foundation
       of conquest and trade. Whatever drives them, humans are innovators, the
       achievers, and the pioneers of the worlds.",
-    laguanges: [:common, :any],
+    languages: [:common, :any],
     speed: 30, #foot
     game_size: :medium,
     recommended_alignments: :any,
