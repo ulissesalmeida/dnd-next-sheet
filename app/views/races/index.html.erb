@@ -28,18 +28,19 @@
     </ul>
 
     <h3>Choose your variant:</h3>
-    <ul class='races-list'>
+    <ul>
       <li>All abilities score + 1</li>
       <li>2 abilities score +1, 1 skill proficiency, 1 feat</li>
     </ul>
 
     <h3>Traits</h3>
     <ul>
-      <li>Age: between 15 and 100</li>
-      <li>Alignment: Any</li>
-      <li>Size: Medium</li>
-      <li>Speed: 30 feet.</li>
-      <li>Languages: Common, +1 of your choice.</li>
+      <% traits_for(@races.last).each do |trait, value| %>
+        <li>
+          <strong><%= trait %>:</strong>
+          <%= value %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </section>
