@@ -20,7 +20,8 @@ module RacesHelper
       trait_with_label('Languages', format_items(race[:languages])),
       trait_with_label('Extra HP per level', format_bonus(race[:extra_hit_points_per_level])),
       trait_with_label('Armor Proficiences', format_items(race[:armor_proficiences])),
-      trait_with_label('Skill Proficiences', format_items(race[:skill_proficiences]))
+      trait_with_label('Skill Proficiences', format_items(race[:skill_proficiences])),
+      trait_with_label('Number of abilities increased by 1', race[:distinct_ability_scores])
     ].select(&:present?)
   end
 

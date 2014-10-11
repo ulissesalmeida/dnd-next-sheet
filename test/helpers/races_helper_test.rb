@@ -68,4 +68,10 @@ class RacesHelperTest < ActionView::TestCase
 
     assert_equal(['Skill Proficiences', 'Perception and Swim'], traits)
   end
+
+  test 'should format the distinct ability scores' do
+    traits = traits_for(distinct_ability_scores: 3).first
+
+    assert_equal(['Number of abilities increased by 1', 3], traits)
+  end
 end
