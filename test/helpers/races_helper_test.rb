@@ -74,4 +74,10 @@ class RacesHelperTest < ActionView::TestCase
 
     assert_equal(['Number of abilities increased by 1', 3], traits)
   end
+
+  test 'should format the feats' do
+    traits = traits_for(feats: [:any, :weapon_focus]).first
+
+    assert_equal(['Feats', 'One extra of your choice and Weapon Focus'], traits)
+  end
 end
