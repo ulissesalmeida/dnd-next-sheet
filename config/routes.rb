@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get 'races/index'
-
+  resources :races, only: [:index, :show]
+  resources :race_variants, only: [:show]
 end

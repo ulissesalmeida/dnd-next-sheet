@@ -1,13 +1,13 @@
 <section class='race-selection'>
   <div class='race-details'>
-    <h2>Races</h2>
+    <h2>Human</h2>
     <div class='race-details-picture'>
       <%= image_tag 'races/human.png', size: '400x225' %>
       <img class='race-details-picture-img' src="">
       <a class='race-details-picture-reference' href="http://eyardt.deviantart.com/">eyardt</a>
     </div>
     <p class='race-details-description'>
-      Bla bla bla bla about races.
+      <%= @race[:description] %>
     </p>
   </div>
 
@@ -16,9 +16,26 @@
 
     <ul class='races-list'>
       <% @races.each do |race| %>
-        <%= content_tag :li, class: ['races-list-item', race[:slug]] do %>
+        <%= content_tag :li, class: ['races-list-item', race[:slug]] << ('selected' if race[:slug] == @race[:slug]) do %>
           <%= link_to race[:name], race_path(race[:slug]) %>
         <% end %>
+      <% end %>
+    </ul>
+
+    <h3>Choose your race variant:</h3>
+    <ul>
+      <% @race[:race_variants].each do |race_variant| %>
+        <%= content_tag :li, race_variant[:name] %>
+      <% end %>
+    </ul>
+
+    <h3>Traits</h3>
+    <ul>
+      <% traits_for(@race).each do |trait, value| %>
+        <li>
+          <strong><%= trait %>:</strong>
+          <%= value %>
+        </li>
       <% end %>
     </ul>
   </div>

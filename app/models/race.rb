@@ -5,18 +5,18 @@ class Race
     end
 
     def find_by_slug(slug)
-      ALL_RACES_BY_SLUG[slug]
+      ALL_RACES_BY_SLUG[slug.to_s]
     end
 
     def find_variant_by_slug(race_slug, variant_slug)
-      ALL_RACES_BY_SLUG[race_slug][:race_variants].find { |variant| variant[:slug] == variant_slug }
+      ALL_RACES_BY_SLUG[race_slug.to_s][:race_variants].find { |variant| variant[:slug].to_s == variant_slug.to_s }
     end
   end
 
   DWARF = {
     name: 'Dwarf',
     slug: :dwarf,
-    ability_scores: [con: 2],
+    ability_scores: { con: 2 },
     age_range: (50..350),
     recommended_alignments: [:lawful, :good],
     game_size: :medium,
@@ -149,8 +149,8 @@ class Race
   HALFLING = {
     name: 'Halfling',
     slug: :halfling,
-    ability_scores: [dex: 2],
-    age_range: [20..150],
+    ability_scores: { dex: 2 },
+    age_range: (20..150),
     recommended_alignments: [:lawful, :good],
     game_size: :small,
     speed: 25, #feet
@@ -232,5 +232,5 @@ class Race
   }
 
   ALL_RACES = [DWARF, ELF, HALFLING, HUMAN]
-  ALL_RACES_BY_SLUG = ALL_RACES.index_by { |race| race[:slug] }
+  ALL_RACES_BY_SLUG = ALL_RACES.index_by { |race| race[:slug].to_s }
 end
