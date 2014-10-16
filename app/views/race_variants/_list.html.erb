@@ -1,0 +1,12 @@
+<ul class='races-list'>
+  <% race[:race_variants].each do |race_variant| %>
+    <%= content_tag :li, class: ['races-list-item', race_variant[:slug]] do %>
+      <%=
+        link_to(
+            race_variant[:name],
+            race_variant_path(race_variant[:slug], race_id: race[:slug])
+        )
+      %>
+    <% end %>
+  <% end %>
+</ul>
