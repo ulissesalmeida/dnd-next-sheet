@@ -1,14 +1,6 @@
 <section class='race-selection'>
   <div class='race-details'>
-    <h2>Human</h2>
-    <div class='race-details-picture'>
-      <%= image_tag 'races/human.png', size: '400x225' %>
-      <img class='race-details-picture-img' src="">
-      <a class='race-details-picture-reference' href="http://eyardt.deviantart.com/">eyardt</a>
-    </div>
-    <p class='race-details-description'>
-      <%= @race[:description] %>
-    </p>
+    <%= render 'races/history', race: @race_variant %>
   </div>
 
   <div class='races-panel'>

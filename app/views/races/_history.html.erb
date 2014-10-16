@@ -1,0 +1,31 @@
+<% if local_assigns[:race].present? %>
+  <h2><%= race[:name] %></h2>
+
+  <div class='race-details-picture'>
+    <%= image_tag "races/#{race[:slug]}.png", size: '400x225' %>
+    <a class='race-details-picture-reference' href="http://eyardt.deviantart.com/">eyardt</a>
+  </div>
+
+  <p><%= race[:description] %></p>
+<% else %>
+  <h2>Races</h2>
+
+  <div class='race-details-picture'>
+    <%= image_tag 'races/races.png', size: '400x225' %>
+    <a class='race-details-picture-reference' href="http://eyardt.deviantart.com/">eyardt</a>
+  </div>
+
+  <p>
+    Your choice of race affects many differents aspects of your character. It
+    establishes fundamental qualities that exist throughout your character's
+    adventuring career. When making this decision, keep in mind the kind of
+    character you want to play. For example, a hafling could be a good choice
+    for a sneaky rougue, a dwarf makes a tough warrior, and a elf can be a
+    master of arcane magic.
+  </p>
+
+  <p>
+    Your character race not only affects your ability scores and traits but also
+    provides the clues for building your character's story.
+  </p>
+<% end %>
