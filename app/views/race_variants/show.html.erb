@@ -40,5 +40,15 @@
         </li>
       <% end %>
     </ul>
+
+    <h3><%= @race_variant[:name] %></h3>
+    <ul>
+      <% traits_for(@race_variant).each do |trait, value| %>
+        <li>
+          <strong><%= trait %>:</strong>
+          <%= value %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </section>
