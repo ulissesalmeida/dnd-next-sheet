@@ -1,6 +1,8 @@
+<% selected_race = local_assigns[:race] %>
+
 <ul class='races-list'>
   <% races.each do |race| %>
-    <%= content_tag :li, class: ['races-list-item', race[:slug]] do %>
+    <%= content_tag :li, class: ['races-list-item', race[:slug]] << ('selected' if selected_race[:slug] == race[:slug]) do %>
       <%= link_to race[:name], race_path(race[:slug]) %>
     <% end %>
   <% end %>

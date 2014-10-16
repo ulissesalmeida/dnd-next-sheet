@@ -4,13 +4,15 @@
   </div>
 
   <div class='races-panel'>
-    <h1>Races</h1>
+    <%= render 'races/list', races: @races, race: @race %>
 
-    <ul class='races-list'>
-      <% @races.each do |race| %>
-        <%= content_tag :li, class: ['races-list-item', race[:slug]] << ('selected' if race[:slug] == @race[:slug]) do %>
-          <%= link_to race[:name], race_path(race[:slug]) %>
-        <% end %>
+    <h3>Traits</h3>
+    <ul>
+      <% traits_for(@race).each do |trait, value| %>
+        <li>
+          <strong><%= trait %>:</strong>
+          <%= value %>
+        </li>
       <% end %>
     </ul>
 
@@ -20,16 +22,6 @@
         <%= content_tag :li, class: 'races-list-item' do %>
           <%= link_to race_variant[:name], race_variant_path(race_variant[:slug], race_id: @race[:slug]) %>
         <% end %>
-      <% end %>
-    </ul>
-
-    <h3>Traits</h3>
-    <ul>
-      <% traits_for(@race).each do |trait, value| %>
-        <li>
-          <strong><%= trait %>:</strong>
-          <%= value %>
-        </li>
       <% end %>
     </ul>
 
