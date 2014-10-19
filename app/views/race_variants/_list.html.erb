@@ -1,6 +1,8 @@
+<% selected_variant = local_assigns[:race_variant] %>
+
 <ul class='races-list'>
   <% race[:race_variants].each do |race_variant| %>
-    <%= content_tag :li, class: ['races-list-item', race_variant[:slug]] do %>
+    <%= content_tag :li, class: ['races-list-item', race_variant[:slug]] << ('selected' if selected_variant && selected_variant[:slug] == race_variant[:slug]) do %>
       <%=
         link_to(
             race_variant[:name],

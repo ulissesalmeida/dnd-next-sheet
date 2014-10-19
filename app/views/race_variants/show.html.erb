@@ -17,13 +17,7 @@
     </ul>
 
     <h3>Choose your race variant:</h3>
-    <ul class='races-list'>
-      <% @race[:race_variants].each do |race_variant| %>
-        <%= content_tag :li, class: 'races-list-item' do %>
-          <%= link_to race_variant[:name], race_variant_path(race_variant[:slug], race_id: @race[:slug]) %>
-        <% end %>
-      <% end %>
-    </ul>
+    <%= render 'race_variants/list', race: @race, race_variant: @race_variant %>
 
     <h3><%= @race_variant[:name] %></h3>
     <ul>
