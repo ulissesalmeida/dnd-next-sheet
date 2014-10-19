@@ -6,3 +6,13 @@
     </li>
   <% end %>
 </ul>
+
+<% if race[:race_powers].present? %>
+  <h3>Race powers:</h3>
+  <dl>
+    <% race[:race_powers].each do |power| %>
+      <dt><%= power[:name] %></dt>
+      <dd><%= power[:description] %></dd>
+    <% end %>
+  </dl>
+<% end %>
