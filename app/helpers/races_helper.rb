@@ -35,7 +35,7 @@ module RacesHelper
   def format_ability_scores(ability_scores)
     safe_ability_scores = Hash(ability_scores)
     safe_ability_scores.map do |ability, score|
-      "#{ABILITY_MAP[ability]} + #{score}"
+      "#{format_ability(ability)} + #{score}"
     end.to_sentence
   end
 
@@ -75,6 +75,10 @@ module RacesHelper
     safe_items.map do |item|
       item == :any ? 'One extra of your choice' : format_item(item)
     end.to_sentence
+  end
+
+  def format_ability(ability)
+    ABILITY_MAP[ability]
   end
 
   def format_item(item)

@@ -88,7 +88,7 @@ class Race
         ability_scores: { int: 1 },
         weapon_proficiences: [ :longsword, :shortsword, :shortbow, :longbow],
         race_spells: {
-          attribute: :int,
+          ability: :int,
           cantrips: [:a_wizard_cantrip]
         },
         languages: [:any]
@@ -127,7 +127,7 @@ class Race
           }
         ],
         race_spells: {
-          attribute: :cha,
+          ability: :cha,
           cantrips: [:dancing_lights],
           levels: [
             {

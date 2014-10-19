@@ -8,11 +8,40 @@
 </ul>
 
 <% if race[:race_powers].present? %>
-  <h3>Race powers:</h3>
+  <h3>Race powers</h3>
   <dl>
     <% race[:race_powers].each do |power| %>
       <dt><%= power[:name] %></dt>
       <dd><%= power[:description] %></dd>
     <% end %>
   </dl>
+<% end %>
+
+<% if race[:race_spells].present? %>
+  <% race_spells = race[:race_spells] %>
+  <h3>Race spells</h3>
+
+  <p>
+    <strong>Attribute:</strong>
+    <%= format_ability(race_spells[:ability]) %>
+  </p>
+
+  <p>
+    <strong>Cantrips:</strong>
+    <%= format_items(race_spells[:cantrips]) %>
+  </p>
+
+  <% if race_spells[:levels].present? %>
+    <% race_spells[:levels].each do |level| %>
+    <h4>Level <%= level[:level] %></h4>
+    <p>
+      <strong>Times per day:</strong>
+      <%= level[:times_per_day] %>
+    </p>
+    <p>
+      <strong>Spells:</strong>
+      <%= format_items(level[:spells]) %>
+    </p>
+    <% end %>
+  <% end %>
 <% end %>
