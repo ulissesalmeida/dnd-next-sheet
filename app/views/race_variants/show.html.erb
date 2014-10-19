@@ -6,27 +6,11 @@
   <div class='races-panel'>
     <%= render 'races/list', races: @races, race: @race %>
 
-    <h3>Traits</h3>
-    <ul>
-      <% traits_for(@race).each do |trait, value| %>
-        <li>
-          <strong><%= trait %>:</strong>
-          <%= value %>
-        </li>
-      <% end %>
-    </ul>
+    <%= render 'races/game_information', race: @race %>
 
     <h3>Choose your race variant:</h3>
     <%= render 'race_variants/list', race: @race, race_variant: @race_variant %>
 
-    <h3><%= @race_variant[:name] %></h3>
-    <ul>
-      <% traits_for(@race_variant).each do |trait, value| %>
-        <li>
-          <strong><%= trait %>:</strong>
-          <%= value %>
-        </li>
-      <% end %>
-    </ul>
+    <%= render 'races/game_information', race: @race_variant %>
   </div>
 </section>

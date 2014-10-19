@@ -6,15 +6,7 @@
   <div class='races-panel'>
     <%= render 'list', races: @races, race: @race %>
 
-    <h3>Traits</h3>
-    <ul>
-      <% traits_for(@race).each do |trait, value| %>
-        <li>
-          <strong><%= trait %>:</strong>
-          <%= value %>
-        </li>
-      <% end %>
-    </ul>
+    <%= render 'game_information', race: @race %>
 
     <h3>Choose your race variant:</h3>
     <%= render 'race_variants/list', race: @race %>
