@@ -1,0 +1,14 @@
+<section class='race-selection'>
+  <div class='race-details'>
+    <%= render 'history', race: @race %>
+  </div>
+
+  <div class='races-panel'>
+    <%= render 'list', races: @races, race: @race %>
+
+    <%= render 'game_information', race: @race %>
+
+    <h3>Choose your race variant:</h3>
+    <%= render 'race_variants/list', race: @race %>
+  </div>
+</section>
