@@ -15,21 +15,21 @@ class CharacterClass
     proficiency_bonus: 2,
     hit_points_dice: :d12,
     hit_points_mean: 7,
-    armor_proficiences: [:light_armor, :medium_armor, :shield],
+    armor_proficiences: [:light, :medium, :shield],
     weapon_proficiences: [:simple, :martial],
     saving_throw_proficiences: [:str, :con],
     tools_proficiences: [],
     skills_proficiences_option: {
       quantity: 2,
       options: [:animal_handling, :athletics, :intimidation, :nature,
-        :perception, :sruvival]
+        :perception, :survival]
     },
     equipment_options: [
       {
         quantity: 1,
         options: [
           { item: :greataxe, quantity: 1 },
-          { item: :any_martial_melee, quantity: 1 }
+          { item: :any_martial_weapon_melee, quantity: 1 }
         ]
       },
       {
