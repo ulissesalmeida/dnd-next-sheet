@@ -1,3 +1,14 @@
+<%= render 'list', character_classes: @character_classes %>
+
 <h1><%= @character_class[:name] %></h1>
 
-<%= render 'list', character_classes: @character_classes %>
+<h2>Class Features</h2>
+
+<ul>
+  <% class_features_for(@character_class).each do |feature, value| %>
+    <li>
+      <strong><%= feature %>:</strong>
+      <%= value %>
+    </li>
+  <% end %>
+</ul>
