@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class CharacterClassesHelperTest < ActionView::TestCase
-  include RacesHelper
+  include GeneralItemsHelper
   include CharacterClassesHelper
 
   test 'should format the hit dice' do

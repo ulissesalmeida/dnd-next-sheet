@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class RacesHelperTest < ActionView::TestCase
+  include GeneralItemsHelper
   include RacesHelper
 
   test 'should format the abilities score' do

@@ -1,7 +1,7 @@
 module CharacterClassesHelper
   def class_features_for(character_class)
     [
-      trait_with_label('Hit Dice', format_hit_dice(character_class[:hit_dice]))
+      label_and_value('Hit Dice', format_hit_dice(character_class[:hit_dice]))
     ].select(&:present?)
   end
 
