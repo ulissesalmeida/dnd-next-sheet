@@ -13,7 +13,7 @@ class CharacterClass
     name: 'Barbarian',
     slug: :barbarian,
     proficiency_bonus: 2,
-    hit_points_dice: :d12,
+    hit_dice: :d12,
     hit_points_mean: 7,
     armor_proficiences: [:light, :medium, :shield],
     weapon_proficiences: [:simple, :martial],
