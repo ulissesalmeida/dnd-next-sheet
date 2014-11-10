@@ -12,6 +12,15 @@ class CharacterClass
   BARBARIAN = {
     name: 'Barbarian',
     slug: :barbarian,
+    description: "<p> The barbarians are defined by their rage: unbridled, "\
+      "unquenchable, and unthinking fury. More than a mere emotion, their "\
+      "anger is the ferocity of a cornered predator, the unrelenting assault "\
+      "of a storm, the churning turmoil of the sea.</p>"\
+      "<p> For some, their rage springs from a communion with fierce animal "\
+      "spirits. Others draw from a roiling reservoir of anger at a world full "\
+      "of pain. For every barbarian, rage is a power that fuels nos just a "\
+      "battle frenzy but also uncanny reflexes, resilience, and feats of "\
+      "strength.</p>",
     proficiency_bonus: 2,
     hit_dice: :d12,
     hit_points_mean: 7,
