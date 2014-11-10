@@ -9,7 +9,7 @@ module CharacterClassesHelper
     :d2 => 2,
   }
 
-  def class_features_for(character_class)
+  def hit_points_descritption_for(character_class)
     [
       label_and_value('Hit Dice', format_hit_dice(character_class[:hit_dice])),
       label_and_value('Hit Points at 1st Level', format_hp_first_level(character_class[:hit_dice])),

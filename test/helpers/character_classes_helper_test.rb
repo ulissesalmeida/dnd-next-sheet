@@ -4,8 +4,8 @@ class CharacterClassesHelperTest < ActionView::TestCase
   include GeneralItemsHelper
   include CharacterClassesHelper
 
-  test 'should format the hit dice information' do
-    features = class_features_for(hit_dice: :d12)
+  test 'should return the hit points descritption for given hit dice' do
+    features = hit_points_descritption_for(hit_dice: :d12)
 
     assert_equal(
       [
