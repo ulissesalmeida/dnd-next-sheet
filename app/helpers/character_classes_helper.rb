@@ -17,6 +17,12 @@ module CharacterClassesHelper
     ].select(&:present?)
   end
 
+  def proficiences_descritption_for(character_class)
+    [
+      label_and_value('Proficience Bonus', format_bonus(character_class[:proficiency_bonus]))
+    ].select(&:present?)
+  end
+
   def format_hit_dice(hit_dice)
     if hit_dice
       "1#{hit_dice} per level"

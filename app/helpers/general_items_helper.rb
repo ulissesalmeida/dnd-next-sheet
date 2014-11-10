@@ -4,4 +4,10 @@ module GeneralItemsHelper
       [label, value]
     end
   end
+
+  def format_bonus(value)
+    if value
+      "+ #{value}"
+    end
+  end
 end

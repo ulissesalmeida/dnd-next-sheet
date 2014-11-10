@@ -14,4 +14,13 @@ class CharacterClassesHelperTest < ActionView::TestCase
         ['Hit Points at Hifher Levels', '1d12(or 7) + your Constitution modifier per level after 1st']
       ], features)
   end
+
+  test 'should return proficiences descritptions for given class' do
+    features = proficiences_descritption_for(proficiency_bonus: 2)
+
+    assert_equal(
+      [
+        ['Proficience Bonus', '+ 2'],
+      ], features)
+  end
 end
