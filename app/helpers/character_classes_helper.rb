@@ -12,7 +12,8 @@ module CharacterClassesHelper
   def class_features_for(character_class)
     [
       label_and_value('Hit Dice', format_hit_dice(character_class[:hit_dice])),
-      label_and_value('Hit Points at 1st Level', format_hp_first_level(character_class[:hit_dice]))
+      label_and_value('Hit Points at 1st Level', format_hp_first_level(character_class[:hit_dice])),
+      label_and_value('Hit Points at Hifher Levels', format_hp_higher_levels(character_class[:hit_dice]))
     ].select(&:present?)
   end
 
@@ -26,5 +27,16 @@ module CharacterClassesHelper
     if hit_dice
       "#{MAX_DICE_VALUE[hit_dice]} + your Constitution modifier"
     end
+  end
+
+  def format_hp_higher_levels(hit_dice)
+    if hit_dice
+      "1#{hit_dice}(or #{hp_alternative_for(hit_dice)})"\
+      " + your Constitution modifier per level after 1st"
+    end
+  end
+
+  def hp_alternative_for(hit_dice)
+    (MAX_DICE_VALUE[hit_dice] / 2).floor + 1
   end
 end
