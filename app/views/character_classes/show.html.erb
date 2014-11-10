@@ -15,3 +15,13 @@
     </li>
   <% end %>
 </ul>
+
+<h3>Proficiences</h3>
+<ul>
+  <% proficiences_descritption_for(@character_class).each do |proficiency, value| %>
+    <li>
+      <strong><%= proficiency %>:</strong>
+      <%= value %>
+    </li>
+  <% end %>
+</ul>
