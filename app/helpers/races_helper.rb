@@ -1,13 +1,4 @@
 module RacesHelper
-  ABILITY_MAP = {
-    str: 'Strength',
-    dex: 'Dexterity',
-    con: 'Constitution',
-    int: 'Inteligence',
-    wis: 'Wisdom',
-    cha: 'Charisma'
-  }
-
   def traits_for(race)
     [
       label_and_value('Ability Scores', format_ability_scores(race[:ability_scores])),
@@ -56,9 +47,5 @@ module RacesHelper
     if speed
       "#{speed} feet"
     end
-  end
-
-  def format_ability(ability)
-    ABILITY_MAP[ability]
   end
 end

@@ -21,7 +21,8 @@ module CharacterClassesHelper
     [
       label_and_value('Proficience Bonus', format_bonus(character_class[:proficiency_bonus])),
       label_and_value('Armor', format_items(character_class[:armor_proficiences])),
-      label_and_value('Weapons', format_items(character_class[:weapon_proficiences]))
+      label_and_value('Weapons', format_items(character_class[:weapon_proficiences])),
+      label_and_value('Saving Throws', format_abilities(character_class[:saving_throw_proficiences]))
     ].select(&:present?)
   end
 
@@ -46,5 +47,11 @@ module CharacterClassesHelper
 
   def hp_alternative_for(hit_dice)
     (MAX_DICE_VALUE[hit_dice] / 2).floor + 1
+  end
+
+  def format_abilities(abilities)
+    safe_abilities = Array(abilities)
+
+    safe_abilities.map { |ability| format_ability(ability) }.to_sentence
   end
 end

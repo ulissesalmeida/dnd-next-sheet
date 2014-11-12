@@ -1,4 +1,13 @@
 module GeneralItemsHelper
+  ABILITY_MAP = {
+    str: 'Strength',
+    dex: 'Dexterity',
+    con: 'Constitution',
+    int: 'Inteligence',
+    wis: 'Wisdom',
+    cha: 'Charisma'
+  }
+
   def label_and_value(label, value)
     if value.present?
       [label, value]
@@ -20,5 +29,9 @@ module GeneralItemsHelper
 
   def format_item(item)
     item.to_s.humanize.titleize
+  end
+
+  def format_ability(ability)
+    ABILITY_MAP[ability]
   end
 end

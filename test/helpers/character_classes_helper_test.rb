@@ -19,14 +19,16 @@ class CharacterClassesHelperTest < ActionView::TestCase
     features = proficiences_descritption_for(
       proficiency_bonus: 2,
       armor_proficiences: [:light, :heavy],
-      weapon_proficiences: [:simple, :martial]
+      weapon_proficiences: [:simple, :martial],
+      saving_throw_proficiences: [:str, :con]
     )
 
     assert_equal(
       [
         ['Proficience Bonus', '+ 2'],
         ['Armor', 'Light and Heavy'],
-        ['Weapons', 'Simple and Martial']
+        ['Weapons', 'Simple and Martial'],
+        ['Saving Throws', 'Strength and Constitution']
       ], features)
   end
 end
