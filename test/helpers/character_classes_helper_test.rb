@@ -20,7 +20,11 @@ class CharacterClassesHelperTest < ActionView::TestCase
       proficiency_bonus: 2,
       armor_proficiences: [:light, :heavy],
       weapon_proficiences: [:simple, :martial],
-      saving_throw_proficiences: [:str, :con]
+      saving_throw_proficiences: [:str, :con],
+      skills_proficiences_option: {
+        quantity: 2,
+        items: [:animal_handling, :athletics]
+      }
     )
 
     assert_equal(
@@ -28,7 +32,8 @@ class CharacterClassesHelperTest < ActionView::TestCase
         ['Proficience Bonus', '+ 2'],
         ['Armor', 'Light and Heavy'],
         ['Weapons', 'Simple and Martial'],
-        ['Saving Throws', 'Strength and Constitution']
+        ['Saving Throws', 'Strength and Constitution'],
+        ['Skills', 'Choose 2 from Animal Handling and Athletics']
       ], features)
   end
 end

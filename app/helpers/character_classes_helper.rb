@@ -22,7 +22,8 @@ module CharacterClassesHelper
       label_and_value('Proficience Bonus', format_bonus(character_class[:proficiency_bonus])),
       label_and_value('Armor', format_items(character_class[:armor_proficiences])),
       label_and_value('Weapons', format_items(character_class[:weapon_proficiences])),
-      label_and_value('Saving Throws', format_abilities(character_class[:saving_throw_proficiences]))
+      label_and_value('Saving Throws', format_abilities(character_class[:saving_throw_proficiences])),
+      label_and_value('Skills', format_choosable_items(character_class[:skills_proficiences_option]))
     ].select(&:present?)
   end
 
@@ -53,5 +54,13 @@ module CharacterClassesHelper
     safe_abilities = Array(abilities)
 
     safe_abilities.map { |ability| format_ability(ability) }.to_sentence
+  end
+
+  def format_choosable_items(option)
+    items = Array(option[:items])
+    quantity = option[:quantity].to_i
+    items_sentence = format_items(items)
+
+    "Choose #{quantity} from #{items_sentence}"
   end
 end

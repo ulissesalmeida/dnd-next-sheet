@@ -29,7 +29,7 @@ class CharacterClass
     tools_proficiences: [],
     skills_proficiences_option: {
       quantity: 2,
-      options: [:animal_handling, :athletics, :intimidation, :nature,
+      items: [:animal_handling, :athletics, :intimidation, :nature,
         :perception, :survival]
     },
     equipment_options: [
