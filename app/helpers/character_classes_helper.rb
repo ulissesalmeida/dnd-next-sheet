@@ -49,18 +49,4 @@ module CharacterClassesHelper
   def hp_alternative_for(hit_dice)
     (MAX_DICE_VALUE[hit_dice] / 2).floor + 1
   end
-
-  def format_abilities(abilities)
-    safe_abilities = Array(abilities)
-
-    safe_abilities.map { |ability| format_ability(ability) }.to_sentence
-  end
-
-  def format_choosable_items(option)
-    items = Array(option[:items])
-    quantity = option[:quantity].to_i
-    items_sentence = format_items(items)
-
-    "Choose #{quantity} from #{items_sentence}"
-  end
 end

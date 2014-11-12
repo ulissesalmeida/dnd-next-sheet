@@ -22,7 +22,10 @@ class Race
     game_size: :medium,
     speed: 25,
     weapon_proficiences: [:battleaxe, :handaxe, :throwing_hammer, :warhammer],
-    distinct_tool_proficiences: [:smith, :brewer, :mason],
+    tool_proficiences_option: {
+      quantity: 1,
+      items: [:smith, :brewer, :mason]
+    },
     languages: [:common, :dwarvish],
     race_powers: [
       {
@@ -224,7 +227,10 @@ class Race
       {
         name: 'Two ability scores of your choice increase by 1, one skill proficiency, one feat.',
         slug: :skill_and_feat,
-        distinct_ability_scores: 2,
+        ability_scores_option: {
+          quantity: 2,
+          items: [:str, :dex, :con, :int, :wis, :cha]
+        },
         skill_proficiences: [:any],
         feats: [:any]
       }

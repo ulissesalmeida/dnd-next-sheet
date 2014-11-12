@@ -41,9 +41,12 @@ class RacesHelperTest < ActionView::TestCase
   end
 
   test 'should format the distinct tools proficiences' do
-    traits = traits_for(distinct_tool_proficiences: [:smith, :brewer]).first
+    traits = traits_for(tool_proficiences_option: {
+      quantity: 1,
+      items: [:smith, :brewer]
+    }).first
 
-    assert_equal(['One tool proficiency of', 'Smith and Brewer'], traits)
+    assert_equal(['Tool Proficiences', 'Choose 1 from Smith and Brewer'], traits)
   end
 
   test 'shoud format the languages' do
@@ -71,9 +74,18 @@ class RacesHelperTest < ActionView::TestCase
   end
 
   test 'should format the distinct ability scores' do
-    traits = traits_for(distinct_ability_scores: 3).first
+    traits = traits_for(ability_scores_option: {
+      quantity: 2,
+      items: [:str, :con, :int]
+    }).first
 
-    assert_equal(['Number of abilities increased by 1', 3], traits)
+    assert_equal(
+      [
+        'Abilities increased by 1',
+        'Choose 2 from Strength, Constitution, and Inteligence'
+      ],
+      traits
+    )
   end
 
   test 'should format the feats' do

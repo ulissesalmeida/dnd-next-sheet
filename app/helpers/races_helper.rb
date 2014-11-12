@@ -7,12 +7,12 @@ module RacesHelper
       label_and_value('Size', format_game_size(race[:game_size])),
       label_and_value('Speed', format_speed(race[:speed])),
       label_and_value('Weapon Proficiences', format_items(race[:weapon_proficiences])),
-      label_and_value('One tool proficiency of', format_items(race[:distinct_tool_proficiences])),
+      label_and_value('Tool Proficiences', format_choosable_items(race[:tool_proficiences_option])),
       label_and_value('Languages', format_items(race[:languages])),
       label_and_value('Extra HP per level', format_bonus(race[:extra_hit_points_per_level])),
       label_and_value('Armor Proficiences', format_items(race[:armor_proficiences])),
       label_and_value('Skill Proficiences', format_items(race[:skill_proficiences])),
-      label_and_value('Number of abilities increased by 1', race[:distinct_ability_scores]),
+      label_and_value('Abilities increased by 1', format_choosable_abilities(race[:ability_scores_option])),
       label_and_value('Feats', format_items(race[:feats]))
     ].select(&:present?)
   end
@@ -46,6 +46,16 @@ module RacesHelper
   def format_speed(speed)
     if speed
       "#{speed} feet"
+    end
+  end
+
+  def format_choosable_abilities(option)
+    if option.present?
+      items = Array(option[:items])
+      quantity = option[:quantity].to_i
+      items_sentence = format_abilities(items)
+
+      "Choose #{quantity} from #{items_sentence}"
     end
   end
 end
