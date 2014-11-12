@@ -16,11 +16,15 @@ class CharacterClassesHelperTest < ActionView::TestCase
   end
 
   test 'should return proficiences descritptions for given class' do
-    features = proficiences_descritption_for(proficiency_bonus: 2)
+    features = proficiences_descritption_for(
+      proficiency_bonus: 2,
+      armor_proficiences: [:light, :heavy]
+    )
 
     assert_equal(
       [
         ['Proficience Bonus', '+ 2'],
+        ['Armor', 'Light and Heavy']
       ], features)
   end
 end
