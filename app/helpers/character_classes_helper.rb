@@ -20,7 +20,8 @@ module CharacterClassesHelper
   def proficiences_descritption_for(character_class)
     [
       label_and_value('Proficience Bonus', format_bonus(character_class[:proficiency_bonus])),
-      label_and_value('Armor', format_items(character_class[:armor_proficiences]))
+      label_and_value('Armor', format_items(character_class[:armor_proficiences])),
+      label_and_value('Weapons', format_items(character_class[:weapon_proficiences]))
     ].select(&:present?)
   end
 
