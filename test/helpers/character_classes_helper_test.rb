@@ -36,4 +36,13 @@ class CharacterClassesHelperTest < ActionView::TestCase
         ['Skills', 'Choose 2 from Animal Handling and Athletics']
       ], features)
   end
+
+  test 'should format the equipment descritption for given class' do
+    descriptions = equipments_description_for([
+      { item: :javelin, quantity: 1 },
+      { item: :javelin, quantity: 4 }
+    ])
+
+    assert_equal(['1 Javelin', '4 Javelins'], descriptions)
+  end
 end

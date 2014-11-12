@@ -27,6 +27,14 @@ module CharacterClassesHelper
     ].select(&:present?)
   end
 
+  def equipments_description_for(equipments)
+    safe_equipments = Array(equipments)
+
+    safe_equipments.map do |equipment|
+      pluralize(equipment[:quantity], format_item(equipment[:item]))
+    end
+  end
+
   def format_hit_dice(hit_dice)
     if hit_dice
       "1#{hit_dice} per level"

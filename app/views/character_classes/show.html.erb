@@ -25,3 +25,10 @@
     </li>
   <% end %>
 </ul>
+
+<h3>Equipment</h3>
+<ul>
+  <% equipments_description_for(@character_class[:equipments]).each do |description| %>
+    <li><%= description %></li>
+  <% end %>
+</ul>
