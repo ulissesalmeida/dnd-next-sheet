@@ -35,14 +35,14 @@ class CharacterClass
     equipment_options: [
       {
         quantity: 1,
-        options: [
+        items: [
           { item: :greataxe, quantity: 1 },
-          { item: :any_martial_weapon_melee, quantity: 1 }
+          { item: :any_melee_martial_weapon, quantity: 1 }
         ]
       },
       {
         quantity: 1,
-        options: [
+        items: [
           { item: :handaxe, quantity: 2 },
           { item: :any_simple_weapon, quantity: 1}
         ]

@@ -27,12 +27,35 @@ module CharacterClassesHelper
     ].select(&:present?)
   end
 
-  def equipments_description_for(equipments)
+  def equipments_description_for(character_class)
+    format_equipments(character_class[:equipments]) +
+      format_equipments_options(character_class[:equipment_options])
+  end
+
+  def format_equipments(equipments)
     safe_equipments = Array(equipments)
 
     safe_equipments.map do |equipment|
-      pluralize(equipment[:quantity], format_item(equipment[:item]))
+      format_equipment(equipment)
     end
+  end
+
+  def format_equipments_options(options)
+    safe_options = Array(options)
+
+    safe_options.map { |option| format_choosable_equipments(option) }
+  end
+
+  def format_choosable_equipments(option)
+    items = Array(option[:items])
+    quantity = option[:quantity].to_i
+    items_sentence = format_equipments(items).to_sentence
+
+    "Choose #{quantity} from #{items_sentence}"
+  end
+
+  def format_equipment(equipment)
+    pluralize(equipment[:quantity], format_item(equipment[:item]))
   end
 
   def format_hit_dice(hit_dice)
