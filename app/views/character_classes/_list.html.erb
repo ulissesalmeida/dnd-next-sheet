@@ -1,7 +1,7 @@
 <ul>
   <% character_classes.each do |character_class| %>
-    <%= content_tag :li do %>
+    <li>
       <%= link_to character_class[:name], character_class_path(character_class[:slug]) %>
-    <% end %>
+    </li>
   <% end %>
 </ul>
