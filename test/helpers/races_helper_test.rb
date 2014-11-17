@@ -48,7 +48,7 @@ class RacesHelperTest < ActionView::TestCase
     assert_equal(['Tool Proficiences', 'Choose 1 from Smith and Brewer'], traits)
   end
 
-  test 'shoud format the languages' do
+  test 'should format the languages' do
     traits = traits_for(languages: [:common, :any]).first
 
     assert_equal(['Languages', 'Common and One extra of your choice'], traits)

@@ -27,8 +27,8 @@ module CharacterClassesHelper
   end
 
   def equipments_description_for(character_class)
-    format_equipments(character_class[:equipments]) +
-      format_equipments_options(character_class[:equipment_options])
+    format_equipments(Array(character_class[:equipments])) +
+      format_equipments_options(Array(character_class[:equipment_options]))
   end
 
   def character_class_level_format(character_class_level)
@@ -42,23 +42,18 @@ module CharacterClassesHelper
   end
 
   def format_equipments(equipments)
-    safe_equipments = Array(equipments)
-
-    safe_equipments.map do |equipment|
+    equipments.map do |equipment|
       format_equipment(equipment)
     end
   end
 
   def format_equipments_options(options)
-    safe_options = Array(options)
-
-    safe_options.map { |option| format_choosable_equipments(option) }
+    options.map { |option| format_choosable_equipments(option) }
   end
 
   def format_choosable_equipments(option)
-    items = Array(option[:items])
-    quantity = option[:quantity].to_i
-    items_sentence = format_equipments(items).to_sentence
+    quantity = option[:quantity]
+    items_sentence = format_equipments(option[:items]).to_sentence
 
     "Choose #{quantity} from #{items_sentence}"
   end

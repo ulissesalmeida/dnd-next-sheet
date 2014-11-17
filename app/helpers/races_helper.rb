@@ -18,10 +18,11 @@ module RacesHelper
   end
 
   def format_ability_scores(ability_scores)
-    safe_ability_scores = Hash(ability_scores)
-    safe_ability_scores.map do |ability, score|
-      "#{format_ability(ability)} + #{score}"
-    end.to_sentence
+    if ability_scores
+      ability_scores.map do |ability, score|
+        "#{format_ability(ability)} + #{score}"
+      end.to_sentence
+    end
   end
 
   def format_age_range(age_range)
@@ -31,10 +32,11 @@ module RacesHelper
   end
 
   def format_recommended_alignments(alignments)
-    safe_alignments = Array(alignments)
-    safe_alignments.map do |alignment|
-      alignment == :any ? 'Any alignment' : format_item(alignment)
-    end.to_sentence
+    if alignments
+      alignments.map do |alignment|
+        alignment == :any ? 'Any alignment' : format_item(alignment)
+      end.to_sentence
+    end
   end
 
   def format_game_size(game_size)
@@ -50,10 +52,9 @@ module RacesHelper
   end
 
   def format_choosable_abilities(option)
-    if option.present?
-      items = Array(option[:items])
-      quantity = option[:quantity].to_i
-      items_sentence = format_abilities(items)
+    if option
+      quantity = option[:quantity]
+      items_sentence = format_abilities(option[:items])
 
       "Choose #{quantity} from #{items_sentence}"
     end
