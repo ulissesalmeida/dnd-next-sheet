@@ -21,7 +21,6 @@ class CharacterClass
       "of pain. For every barbarian, rage is a power that fuels nos just a "\
       "battle frenzy but also uncanny reflexes, resilience, and feats of "\
       "strength.</p>",
-    proficiency_bonus: 2,
     hit_dice: :d12,
     armor_proficiences: [:light, :medium, :shield],
     weapon_proficiences: [:simple, :martial],
