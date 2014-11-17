@@ -32,3 +32,9 @@
     <li><%= description %></li>
   <% end %>
 </ul>
+
+<% @character_class[:class_features].each do |feature| %>
+  <h3><%= feature[:name] %></h3>
+  <p><strong>Level:</strong> <%= feature[:level] %></p>
+  <%= raw feature[:description] %>
+<% end %>
