@@ -66,10 +66,45 @@ class CharacterClass
                       You can use a shield and gain this benefit.'
       }
     ],
-    rage_power: {
-      damage: 2,
-      times_before_rest: 2
-    }
+    class_levels_headers: [:level, :proficiency_bonus, :features,
+        :rages, :rage_damage],
+    class_levels: [
+      {
+        level: 1,
+        proficiency_bonus: 2,
+        features: [:rage, :unarmored_defense],
+        rages: 2,
+        rage_damage: 2
+      },
+      {
+        level: 2,
+        proficiency_bonus: 2,
+        features: [:reckless_attack, :danger_sense],
+        rages: 2,
+        rage_damage: 2
+      },
+      {
+        level: 3,
+        proficiency_bonus: 2,
+        features: [:primal_path],
+        rages: 3,
+        rage_damage: 2
+      },
+      {
+        level: 4,
+        proficiency_bonus: 3,
+        features: [:ability_score_improvement],
+        rages: 3,
+        rage_damage: 2
+      },
+      {
+        level: 5,
+        proficiency_bonus: 3,
+        features: [:extra_attack, :fast_movement],
+        rages: 3,
+        rage_damage: 2
+      },
+    ]
   }
 
   ALL_CLASSES = [BARBARIAN]

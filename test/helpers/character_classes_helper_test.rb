@@ -69,4 +69,16 @@ class CharacterClassesHelperTest < ActionView::TestCase
       descriptions
     )
   end
+
+  test 'should format the character level values' do
+    values = character_class_level_format(
+      level: 1,
+      proficiency_bonus: 2,
+      features: [:rage, :unarmored_defense],
+      rages: 2,
+      rage_damage: 2
+    )
+
+    assert_equal([1, '+2', 'Rage and Unarmored Defense', 2, '+2'], values)
+  end
 end

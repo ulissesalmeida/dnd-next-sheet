@@ -16,7 +16,7 @@ module GeneralItemsHelper
 
   def format_bonus(value)
     if value
-      "+ #{value}"
+      "+#{value}"
     end
   end
 

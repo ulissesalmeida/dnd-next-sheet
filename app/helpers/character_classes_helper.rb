@@ -31,6 +31,16 @@ module CharacterClassesHelper
       format_equipments_options(character_class[:equipment_options])
   end
 
+  def character_class_level_format(character_class_level)
+    [
+      character_class_level[:level],
+      format_bonus(character_class_level[:proficiency_bonus]),
+      format_items(character_class_level[:features]),
+      character_class_level[:rages],
+      format_bonus(character_class_level[:rage_damage])
+    ].select(&:present?)
+  end
+
   def format_equipments(equipments)
     safe_equipments = Array(equipments)
 
