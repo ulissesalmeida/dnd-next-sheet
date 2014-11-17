@@ -2,7 +2,6 @@ require 'test_helper'
 
 class RacesHelperTest < ActionView::TestCase
   include GeneralItemsHelper
-  include RacesHelper
 
   test 'should format the abilities score' do
     traits = traits_for(ability_scores: { con: 1, dex: 2, str: 3 }).first

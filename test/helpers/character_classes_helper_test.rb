@@ -2,7 +2,6 @@ require 'test_helper'
 
 class CharacterClassesHelperTest < ActionView::TestCase
   include GeneralItemsHelper
-  include CharacterClassesHelper
 
   test 'should return the hit points descritption for given hit dice' do
     features = hit_points_descritption_for(hit_dice: :d12)
