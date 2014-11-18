@@ -14,12 +14,12 @@ class CharacterClassesHelperTest < ActionView::TestCase
       ], features)
   end
 
-  test 'should return proficiences descritptions for given class' do
-    features = proficiences_descritption_for(
-      armor_proficiences: [:light, :heavy],
-      weapon_proficiences: [:simple, :martial],
-      saving_throw_proficiences: [:str, :con],
-      skills_proficiences_option: {
+  test 'should return proficiencies descritptions for given class' do
+    features = proficiencies_descritption_for(
+      armor_proficiencies: [:light, :heavy],
+      weapon_proficiencies: [:simple, :martial],
+      saving_throw_proficiencies: [:str, :con],
+      skills_proficiencies_option: {
         quantity: 2,
         items: [:animal_handling, :athletics]
       }

@@ -33,19 +33,19 @@ class RacesHelperTest < ActionView::TestCase
     assert_equal(['Speed', '30 feet'], traits)
   end
 
-  test 'should format the weapon proficiences' do
-    traits = traits_for(weapon_proficiences: [:handaxe, :throwing_hammer]).first
+  test 'should format the weapon proficiencies' do
+    traits = traits_for(weapon_proficiencies: [:handaxe, :throwing_hammer]).first
 
-    assert_equal(['Weapon Proficiences', 'Handaxe and Throwing Hammer'], traits)
+    assert_equal(['Weapon Proficiencies', 'Handaxe and Throwing Hammer'], traits)
   end
 
-  test 'should format the distinct tools proficiences' do
-    traits = traits_for(tool_proficiences_option: {
+  test 'should format the distinct tools proficiencies' do
+    traits = traits_for(tool_proficiencies_option: {
       quantity: 1,
       items: [:smith, :brewer]
     }).first
 
-    assert_equal(['Tool Proficiences', 'Choose 1 from Smith and Brewer'], traits)
+    assert_equal(['Tool Proficiencies', 'Choose 1 from Smith and Brewer'], traits)
   end
 
   test 'should format the languages' do
@@ -60,16 +60,16 @@ class RacesHelperTest < ActionView::TestCase
     assert_equal(['Extra HP per level', '+2'], traits)
   end
 
-  test 'should format the armor proficiences' do
-    traits = traits_for(armor_proficiences: [:light, :heavy]).first
+  test 'should format the armor proficiencies' do
+    traits = traits_for(armor_proficiencies: [:light, :heavy]).first
 
-    assert_equal(['Armor Proficiences', 'Light and Heavy'], traits)
+    assert_equal(['Armor Proficiencies', 'Light and Heavy'], traits)
   end
 
-  test 'should format the skill proficiences' do
-    traits = traits_for(skill_proficiences: [:perception, :swim]).first
+  test 'should format the skill proficiencies' do
+    traits = traits_for(skill_proficiencies: [:perception, :swim]).first
 
-    assert_equal(['Skill Proficiences', 'Perception and Swim'], traits)
+    assert_equal(['Skill Proficiencies', 'Perception and Swim'], traits)
   end
 
   test 'should format the distinct ability scores' do

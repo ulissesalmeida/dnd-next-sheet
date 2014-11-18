@@ -17,12 +17,12 @@ module CharacterClassesHelper
     ].select(&:present?)
   end
 
-  def proficiences_descritption_for(character_class)
+  def proficiencies_descritption_for(character_class)
     [
-      label_and_value('Armor', format_items(character_class[:armor_proficiences])),
-      label_and_value('Weapons', format_items(character_class[:weapon_proficiences])),
-      label_and_value('Saving Throws', format_abilities(character_class[:saving_throw_proficiences])),
-      label_and_value('Skills', format_choosable_items(character_class[:skills_proficiences_option]))
+      label_and_value('Armor', format_items(character_class[:armor_proficiencies])),
+      label_and_value('Weapons', format_items(character_class[:weapon_proficiencies])),
+      label_and_value('Saving Throws', format_abilities(character_class[:saving_throw_proficiencies])),
+      label_and_value('Skills', format_choosable_items(character_class[:skills_proficiencies_option]))
     ].select(&:present?)
   end
 
