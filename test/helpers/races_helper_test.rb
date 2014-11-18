@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class RacesHelperTest < ActionView::TestCase
-  include RacesHelper
+  include GeneralItemsHelper
 
   test 'should format the abilities score' do
     traits = traits_for(ability_scores: { con: 1, dex: 2, str: 3 }).first
@@ -40,12 +40,15 @@ class RacesHelperTest < ActionView::TestCase
   end
 
   test 'should format the distinct tools proficiences' do
-    traits = traits_for(distinct_tool_proficiences: [:smith, :brewer]).first
+    traits = traits_for(tool_proficiences_option: {
+      quantity: 1,
+      items: [:smith, :brewer]
+    }).first
 
-    assert_equal(['One tool proficiency of', 'Smith and Brewer'], traits)
+    assert_equal(['Tool Proficiences', 'Choose 1 from Smith and Brewer'], traits)
   end
 
-  test 'shoud format the languages' do
+  test 'should format the languages' do
     traits = traits_for(languages: [:common, :any]).first
 
     assert_equal(['Languages', 'Common and One extra of your choice'], traits)
@@ -54,7 +57,7 @@ class RacesHelperTest < ActionView::TestCase
   test 'should format the extra hit points per level' do
     traits = traits_for(extra_hit_points_per_level: 2).first
 
-    assert_equal(['Extra HP per level', '+ 2'], traits)
+    assert_equal(['Extra HP per level', '+2'], traits)
   end
 
   test 'should format the armor proficiences' do
@@ -70,9 +73,18 @@ class RacesHelperTest < ActionView::TestCase
   end
 
   test 'should format the distinct ability scores' do
-    traits = traits_for(distinct_ability_scores: 3).first
+    traits = traits_for(ability_scores_option: {
+      quantity: 2,
+      items: [:str, :con, :int]
+    }).first
 
-    assert_equal(['Number of abilities increased by 1', 3], traits)
+    assert_equal(
+      [
+        'Abilities increased by 1',
+        'Choose 2 from Strength, Constitution, and Inteligence'
+      ],
+      traits
+    )
   end
 
   test 'should format the feats' do

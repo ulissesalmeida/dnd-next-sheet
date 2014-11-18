@@ -1,0 +1,7 @@
+<ul>
+  <% character_classes.each do |character_class| %>
+    <li>
+      <%= link_to character_class[:name], character_class_path(character_class[:slug]) %>
+    </li>
+  <% end %>
+</ul>

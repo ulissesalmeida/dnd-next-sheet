@@ -1,0 +1,57 @@
+<%= render 'list', character_classes: @character_classes %>
+
+<h1><%= @character_class[:name] %></h1>
+
+<%= raw @character_class[:description] %>
+
+<table class='class-levels'>
+  <thead>
+    <% @character_class[:class_levels_headers].each do |header| %>
+      <th><%= format_item(header) %></th>
+    <% end %>
+  </thead>
+  <tbody>
+    <% @character_class[:class_levels].each do |level| %>
+      <tr>
+        <% character_class_level_format(level).each do |value| %>
+          <td><%= value %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Class Features</h2>
+
+<h3>Hit Points</h3>
+<ul>
+  <% hit_points_descritption_for(@character_class).each do |label, value| %>
+    <li>
+      <strong><%= label %>:</strong>
+      <%= value %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Proficiences</h3>
+<ul>
+  <% proficiences_descritption_for(@character_class).each do |proficiency, value| %>
+    <li>
+      <strong><%= proficiency %>:</strong>
+      <%= value %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Equipments</h3>
+<ul>
+  <% equipments_description_for(@character_class).each do |description| %>
+    <li><%= description %></li>
+  <% end %>
+</ul>
+
+<% @character_class[:class_features].each do |feature| %>
+  <h3><%= feature[:name] %></h3>
+  <p><strong>Level:</strong> <%= feature[:level] %></p>
+  <%= raw feature[:description] %>
+<% end %>
