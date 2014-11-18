@@ -89,7 +89,7 @@ class Race
         name: 'High Elf',
         slug: :high_elf,
         ability_scores: { int: 1 },
-        weapon_proficiencies: [ :longsword, :shortsword, :shortbow, :longbow],
+        weapon_proficiencies: [:longsword, :shortsword, :shortbow, :longbow],
         race_spells: {
           ability: :int,
           cantrips: [:a_wizard_cantrip]
@@ -100,7 +100,7 @@ class Race
         name: 'Wood Elf',
         slug: :wood_elf,
         ability_scores: { wis: 1 },
-        weapon_proficiencies: [ :longsword, :shortsword, :shortbow, :longbow],
+        weapon_proficiencies: [:longsword, :shortsword, :shortbow, :longbow],
         speed: 35, #It overrides the default elf speed
         race_powers: [
           {
@@ -115,7 +115,7 @@ class Race
         name: 'Dark Elf (Drow)',
         slug: :dark_elf,
         ability_scores: { cha: 1 },
-        weapon_proficiencies: [ :rapier, :shortsword, :hand_crossbow],
+        weapon_proficiencies: [:rapier, :shortsword, :hand_crossbow],
         race_powers: [
           {
             name: 'Superior Darkvision',
