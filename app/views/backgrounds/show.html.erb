@@ -5,3 +5,12 @@
 <h1><%= @background[:name] %></h1>
 
 <%= raw @background[:description] %>
+
+<ul>
+  <% background_traits_for(@background).each do |label, value| %>
+    <li>
+      <strong><%= label %>:</strong>
+      <%= value %>
+    </li>
+  <% end %>
+</ul>
