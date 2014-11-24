@@ -25,3 +25,7 @@
     <li><%= format_coin_pouch(@background[:coin_pouch]).join(', ') %></li>
   <% end %>
 </ul>
+
+<h3>Feature: <%= @background[:feature][:name] %></h3>
+
+<%= raw @background[:feature][:description] %>
