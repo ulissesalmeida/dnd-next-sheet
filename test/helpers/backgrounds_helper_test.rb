@@ -8,4 +8,10 @@ class BackgroundsHelperTest < ActionView::TestCase
 
     assert_equal(['Skill Proficiencies', 'Religion and Insight'], description)
   end
+
+  test 'should return the languages choosable quantity' do
+    description = background_traits_for(languages_quantity: 2).first
+
+    assert_equal(['Languages', '2 of your choice'], description)
+  end
 end

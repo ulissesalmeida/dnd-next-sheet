@@ -13,6 +13,7 @@ class Background
     slug: :acolyte,
     name: 'Acolyte',
     description: '',
+    languages_quantity: 2,
     skill_proficiencies: [:insight, :religion],
     equipment: [
       { item: :holy_symbol, quantity: 1 },
