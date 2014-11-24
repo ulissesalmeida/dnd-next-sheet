@@ -15,12 +15,12 @@ class Background
     description: '',
     languages_quantity: 2,
     skill_proficiencies: [:insight, :religion],
-    equipment: [
+    equipments: [
       { item: :holy_symbol, quantity: 1 },
       { item: :prayer_book, quantity: 1 },
       { item: :sticks_of_incense, quantity: 5 },
-      { item: :vestments, quantity: 1 },
-      { item: :common_clothes, quantity: 1 },
+      { item: :vestment, quantity: 1 },
+      { item: :common_cloth, quantity: 1 },
     ],
     money: {
       gold: 15,

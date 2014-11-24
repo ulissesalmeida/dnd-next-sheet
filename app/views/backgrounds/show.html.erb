@@ -2,7 +2,7 @@
 
 <%= render 'list', backgrounds: @backgrounds %>
 
-<h1><%= @background[:name] %></h1>
+<h2><%= @background[:name] %></h2>
 
 <%= raw @background[:description] %>
 
@@ -12,5 +12,12 @@
       <strong><%= label %>:</strong>
       <%= value %>
     </li>
+  <% end %>
+</ul>
+
+<h3>Equipments</h3>
+<ul>
+  <% equipments_description_for(@background).each do |description| %>
+    <li><%= description %></li>
   <% end %>
 </ul>
