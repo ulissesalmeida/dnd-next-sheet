@@ -8,6 +8,32 @@ module GeneralItemsHelper
     cha: 'Charisma'
   }
 
+  def equipments_description_for(resource)
+    format_equipments(Array(resource[:equipments])) +
+      format_equipments_options(Array(resource[:equipment_options]))
+  end
+
+  def format_equipments(equipments)
+    equipments.map do |equipment|
+      format_equipment(equipment)
+    end
+  end
+
+  def format_equipments_options(options)
+    options.map { |option| format_choosable_equipments(option) }
+  end
+
+  def format_choosable_equipments(option)
+    quantity = option[:quantity]
+    items_sentence = format_equipments(option[:items]).to_sentence
+
+    "Choose #{quantity} from #{items_sentence}"
+  end
+
+  def format_equipment(equipment)
+    pluralize(equipment[:quantity], format_item(equipment[:item]))
+  end
+
   def label_and_value(label, value)
     if value
       [label, value]

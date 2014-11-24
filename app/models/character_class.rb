@@ -22,11 +22,11 @@ class CharacterClass
       "battle frenzy but also uncanny reflexes, resilience, and feats of "\
       "strength.</p>",
     hit_dice: :d12,
-    armor_proficiences: [:light, :medium, :shield],
-    weapon_proficiences: [:simple, :martial],
-    saving_throw_proficiences: [:str, :con],
-    tools_proficiences: [],
-    skills_proficiences_option: {
+    armor_proficiencies: [:light, :medium, :shield],
+    weapon_proficiencies: [:simple, :martial],
+    saving_throw_proficiencies: [:str, :con],
+    tools_proficiencies: [],
+    skills_proficiencies_option: {
       quantity: 2,
       items: [:animal_handling, :athletics, :intimidation, :nature,
         :perception, :survival]

@@ -1,0 +1,7 @@
+<ul>
+  <% backgrounds.each do |background| %>
+    <li>
+      <%= link_to background[:name], background_path(background[:slug]) %>
+    </li>
+  <% end %>
+</ul>

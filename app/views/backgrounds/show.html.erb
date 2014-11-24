@@ -1,0 +1,31 @@
+<%= render 'list', backgrounds: @backgrounds %>
+
+<h1><%= @background[:name] %></h1>
+
+<%= raw @background[:description] %>
+
+<h2>Background Features</h2>
+
+<ul>
+  <% background_traits_for(@background).each do |label, value| %>
+    <li>
+      <strong><%= label %>:</strong>
+      <%= value %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Equipments</h3>
+<ul>
+  <% equipments_description_for(@background).each do |description| %>
+    <li><%= description %></li>
+  <% end %>
+
+  <% if @background[:coin_pouch].present? %>
+    <li><%= format_coin_pouch(@background[:coin_pouch]).join(', ') %></li>
+  <% end %>
+</ul>
+
+<h3>Feature: <%= @background[:feature][:name] %></h3>
+
+<%= raw @background[:feature][:description] %>

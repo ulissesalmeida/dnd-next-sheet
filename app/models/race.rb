@@ -21,8 +21,8 @@ class Race
     recommended_alignments: [:lawful, :good],
     game_size: :medium,
     speed: 25,
-    weapon_proficiences: [:battleaxe, :handaxe, :throwing_hammer, :warhammer],
-    tool_proficiences_option: {
+    weapon_proficiencies: [:battleaxe, :handaxe, :throwing_hammer, :warhammer],
+    tool_proficiencies_option: {
       quantity: 1,
       items: [:smith, :brewer, :mason]
     },
@@ -52,7 +52,7 @@ class Race
         name: 'Mountain Dwarf',
         slug: :mountain_dwarf,
         ability_scores: { str: 2 },
-        armor_proficiences: [:light, :medium]
+        armor_proficiencies: [:light, :medium]
       }
     ]
   }
@@ -65,7 +65,7 @@ class Race
     alignemnt: [:chaotic, :good],
     game_size: :medium,
     speed: 30,
-    skill_proficiences: [:perception],
+    skill_proficiencies: [:perception],
     languages: [:common, :elvish],
     race_powers: [
       {
@@ -89,7 +89,7 @@ class Race
         name: 'High Elf',
         slug: :high_elf,
         ability_scores: { int: 1 },
-        weapon_proficiences: [ :longsword, :shortsword, :shortbow, :longbow],
+        weapon_proficiencies: [:longsword, :shortsword, :shortbow, :longbow],
         race_spells: {
           ability: :int,
           cantrips: [:a_wizard_cantrip]
@@ -100,7 +100,7 @@ class Race
         name: 'Wood Elf',
         slug: :wood_elf,
         ability_scores: { wis: 1 },
-        weapon_proficiences: [ :longsword, :shortsword, :shortbow, :longbow],
+        weapon_proficiencies: [:longsword, :shortsword, :shortbow, :longbow],
         speed: 35, #It overrides the default elf speed
         race_powers: [
           {
@@ -115,7 +115,7 @@ class Race
         name: 'Dark Elf (Drow)',
         slug: :dark_elf,
         ability_scores: { cha: 1 },
-        weapon_proficiences: [ :rapier, :shortsword, :hand_crossbow],
+        weapon_proficiencies: [:rapier, :shortsword, :hand_crossbow],
         race_powers: [
           {
             name: 'Superior Darkvision',
@@ -231,7 +231,7 @@ class Race
           quantity: 2,
           items: [:str, :dex, :con, :int, :wis, :cha]
         },
-        skill_proficiences: [:any],
+        skill_proficiencies: [:any],
         feats: [:any]
       }
     ]

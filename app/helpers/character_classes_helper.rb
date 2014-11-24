@@ -17,18 +17,13 @@ module CharacterClassesHelper
     ].select(&:present?)
   end
 
-  def proficiences_descritption_for(character_class)
+  def proficiencies_descritption_for(character_class)
     [
-      label_and_value('Armor', format_items(character_class[:armor_proficiences])),
-      label_and_value('Weapons', format_items(character_class[:weapon_proficiences])),
-      label_and_value('Saving Throws', format_abilities(character_class[:saving_throw_proficiences])),
-      label_and_value('Skills', format_choosable_items(character_class[:skills_proficiences_option]))
+      label_and_value('Armor', format_items(character_class[:armor_proficiencies])),
+      label_and_value('Weapons', format_items(character_class[:weapon_proficiencies])),
+      label_and_value('Saving Throws', format_abilities(character_class[:saving_throw_proficiencies])),
+      label_and_value('Skills', format_choosable_items(character_class[:skills_proficiencies_option]))
     ].select(&:present?)
-  end
-
-  def equipments_description_for(character_class)
-    format_equipments(Array(character_class[:equipments])) +
-      format_equipments_options(Array(character_class[:equipment_options]))
   end
 
   def character_class_level_format(character_class_level)
@@ -39,27 +34,6 @@ module CharacterClassesHelper
       character_class_level[:rages],
       format_bonus(character_class_level[:rage_damage])
     ].select(&:present?)
-  end
-
-  def format_equipments(equipments)
-    equipments.map do |equipment|
-      format_equipment(equipment)
-    end
-  end
-
-  def format_equipments_options(options)
-    options.map { |option| format_choosable_equipments(option) }
-  end
-
-  def format_choosable_equipments(option)
-    quantity = option[:quantity]
-    items_sentence = format_equipments(option[:items]).to_sentence
-
-    "Choose #{quantity} from #{items_sentence}"
-  end
-
-  def format_equipment(equipment)
-    pluralize(equipment[:quantity], format_item(equipment[:item]))
   end
 
   def format_hit_dice(hit_dice)
