@@ -22,8 +22,8 @@ class Background
       { item: :vestment, quantity: 1 },
       { item: :common_cloth, quantity: 1 },
     ],
-    money: {
-      gold: 15,
+    coin_pouch: {
+      gp: 15,
     },
     feature: {
       name: 'Shelter of the Faithful',

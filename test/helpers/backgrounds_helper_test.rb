@@ -20,4 +20,10 @@ class BackgroundsHelperTest < ActionView::TestCase
 
     assert_equal(['Tool Proficiencies', 'Disguise Kit and One Type Of Musical Instrument'], description)
   end
+
+  test 'should format the coin pouch' do
+    coins = format_coin_pouch(gp: 10, sp: 5, xx: 10)
+
+    assert_equal(['5 sp', '10 gp'], coins)
+  end
 end

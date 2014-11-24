@@ -1,10 +1,10 @@
-<h1>Backgrounds</h1>
-
 <%= render 'list', backgrounds: @backgrounds %>
 
-<h2><%= @background[:name] %></h2>
+<h1><%= @background[:name] %></h1>
 
 <%= raw @background[:description] %>
+
+<h2>Background Features</h2>
 
 <ul>
   <% background_traits_for(@background).each do |label, value| %>
@@ -19,5 +19,9 @@
 <ul>
   <% equipments_description_for(@background).each do |description| %>
     <li><%= description %></li>
+  <% end %>
+
+  <% if @background[:coin_pouch].present? %>
+    <li><%= format_coin_pouch(@background[:coin_pouch]).join(', ') %></li>
   <% end %>
 </ul>
