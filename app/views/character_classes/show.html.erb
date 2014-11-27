@@ -55,3 +55,7 @@
   <p><strong>Level:</strong> <%= feature[:level] %></p>
   <%= raw feature[:description] %>
 <% end %>
+
+<%= form_for :character_classes do |f| %>
+  <%= f.submit "Select" %>
+<% end %>
