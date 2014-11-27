@@ -29,3 +29,7 @@
 <h3>Feature: <%= @background[:feature][:name] %></h3>
 
 <%= raw @background[:feature][:description] %>
+
+<%= form_for :backgrounds do |f| %>
+  <%= f.submit "Select" %>
+<% end %>
