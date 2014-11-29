@@ -4,7 +4,7 @@ class RacesHelperTest < ActionView::TestCase
   include GeneralItemsHelper
 
   test 'should format the abilities score' do
-    traits = traits_for(ability_scores: { con: 1, dex: 2, str: 3 }).first
+    traits = traits_for(ability_scores: { con: 1, 'dex' => 2, str: 3 }).first
 
     assert_equal(['Ability Scores', 'Constitution + 1, Dexterity + 2, and Strength + 3'], traits)
   end
