@@ -1,0 +1,92 @@
+---
+name: Elf
+slug: :elf
+ability_scores:
+  dex: 2
+age_range: !ruby/range
+  begin: 100
+  end: 750
+  excl: false
+alignemnt:
+- :chaotic
+- :good
+game_size: :medium
+speed: 30
+skill_proficiencies:
+- :perception
+languages:
+- :common
+- :elvish
+race_powers:
+- name: Darkvision
+  description: >
+    You can see in dim light within 60 feet of you as if it were bright light,
+    and in darkness as if it were dim light.
+- name: Fey Ancestry
+  description: >
+    You have advantage on saving throws against being charmed, and magic
+    can’t put you to sleep.
+- name: Trance
+  description: >
+    Elves don’t need to sleep.Instead,they meditate deeply, remaining
+    semiconscious, for 4 hours a day.
+race_variants:
+- name: High Elf
+  slug: :high_elf
+  ability_scores:
+    int: 1
+  weapon_proficiencies:
+  - :longsword
+  - :shortsword
+  - :shortbow
+  - :longbow
+  race_spells:
+    ability: :int
+    cantrips:
+    - :a_wizard_cantrip
+  languages:
+  - :any
+- name: Wood Elf
+  slug: :wood_elf
+  ability_scores:
+    wis: 1
+  weapon_proficiencies:
+  - :longsword
+  - :shortsword
+  - :shortbow
+  - :longbow
+  speed: 35
+  race_powers:
+  - name: Mask of the Wild
+    description: >
+      You can attempt to hide even when you are only lightly obscured by
+      foliage, heavy rain, falling snow, mist, and other natural phenomena.
+- name: Dark Elf (Drow)
+  slug: :dark_elf
+  ability_scores:
+    cha: 1
+  weapon_proficiencies:
+  - :rapier
+  - :shortsword
+  - :hand_crossbow
+  race_powers:
+  - name: Superior Darkvision
+    description: Your darkvision has radius of 120 feet.
+  - name: Sunlight Sensitivity
+    description: >
+      You have disvantage on attack  rolls and on Wisdom(Perception) checks
+      that rely on sight when you, the target, of your attack, or whatever you
+      are trying to perceive is in direct sunlight.
+  race_spells:
+    ability: :cha
+    cantrips:
+    - :dancing_lights
+    levels:
+    - level: 3
+      times_per_day: 1
+      spells:
+      - :faerie_fire
+    - level: 5
+      times_per_day: 1
+      spells:
+      - :darkness

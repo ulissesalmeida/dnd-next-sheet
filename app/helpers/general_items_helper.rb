@@ -1,11 +1,11 @@
 module GeneralItemsHelper
   ABILITY_MAP = {
-    str: 'Strength',
-    dex: 'Dexterity',
-    con: 'Constitution',
-    int: 'Inteligence',
-    wis: 'Wisdom',
-    cha: 'Charisma'
+    'str' => 'Strength',
+    'dex' => 'Dexterity',
+    'con' => 'Constitution',
+    'int' => 'Inteligence',
+    'wis' => 'Wisdom',
+    'cha' => 'Charisma'
   }
 
   def equipments_description_for(resource)
@@ -59,7 +59,7 @@ module GeneralItemsHelper
   end
 
   def format_ability(ability)
-    ABILITY_MAP[ability]
+    ABILITY_MAP[ability.to_s]
   end
 
   def format_abilities(abilities)
