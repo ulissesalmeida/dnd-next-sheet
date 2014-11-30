@@ -1,5 +1,5 @@
 ---
-slug: :acolyte
+slug: acolyte
 name: Acolyte
 description: >
   <p>You have sepen your life in the service of a temple to a specific
@@ -9,18 +9,18 @@ description: >
   a cleric - performing sacred rites is not the same thing as channeling divine power.</p>
 languages_quantity: 2
 skill_proficiencies:
-- :insight
-- :religion
+- insight
+- religion
 equipments:
-- item: :holy_symbol
+- item: holy_symbol
   quantity: 1
-- item: :prayer_book
+- item: prayer_book
   quantity: 1
-- item: :sticks_of_incense
+- item: sticks_of_incense
   quantity: 5
-- item: :vestment
+- item: vestment
   quantity: 1
-- item: :common_cloth
+- item: common_cloth
   quantity: 1
 coin_pouch:
   gp: 15

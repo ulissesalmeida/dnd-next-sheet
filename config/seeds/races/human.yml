@@ -1,6 +1,6 @@
 ---
 name: Human
-slug: :human
+slug: human
 description: >
   In the reckonings of most worlds, humans are the youngest of the common
   races, late to arrive on the world scene and short-lived in comparison
@@ -11,19 +11,19 @@ description: >
   of conquest and trade. Whatever drives them, humans are innovators, the
   achievers, and the pioneers of the worlds.
 languages:
-- :common
-- :any
+- common
+- any
 speed: 30
-game_size: :medium
+game_size: medium
 recommended_alignments:
-- :any
+- any
 age_range: !ruby/range
   begin: 15
   end: 100
   excl: false
 race_variants:
 - name: Trained Human
-  slug: :trained_human
+  slug: trained_human
   ability_scores:
     str: 1
     dex: 1
@@ -32,17 +32,17 @@ race_variants:
     wis: 1
     int: 1
 - name: Skillful Human
-  slug: :skillful_human
+  slug: skillful_human
   ability_scores_option:
     quantity: 2
     items:
-    - :str
-    - :dex
-    - :con
-    - :int
-    - :wis
-    - :cha
+    - str
+    - dex
+    - con
+    - int
+    - wis
+    - cha
   skill_proficiencies:
-  - :any
+  - any
   feats:
-  - :any
+  - any

@@ -4,7 +4,7 @@ class BackgroundsHelperTest < ActionView::TestCase
   include GeneralItemsHelper
 
   test 'should return the skill proficiencies description' do
-    description = background_traits_for(skill_proficiencies: [:religion, :insight]).first
+    description = background_traits_for(skill_proficiencies: ['religion', 'insight']).first
 
     assert_equal(['Skill Proficiencies', 'Religion and Insight'], description)
   end
@@ -16,7 +16,7 @@ class BackgroundsHelperTest < ActionView::TestCase
   end
 
   test 'should return the tool proficiencies description' do
-    description = background_traits_for(tool_proficiencies: [:disguise_kit, :one_type_of_musical_instrument]).first
+    description = background_traits_for(tool_proficiencies: ['disguise_kit', 'one_type_of_musical_instrument']).first
 
     assert_equal(['Tool Proficiencies', 'Disguise Kit and One Type Of Musical Instrument'], description)
   end

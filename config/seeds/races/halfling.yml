@@ -1,6 +1,6 @@
 ---
 name: Halfling
-slug: :halfling
+slug: halfling
 ability_scores:
   dex: 2
 age_range: !ruby/range
@@ -8,13 +8,13 @@ age_range: !ruby/range
   end: 150
   excl: false
 recommended_alignments:
-- :lawful
-- :good
-game_size: :small
+- lawful
+- good
+game_size: small
 speed: 25
 languages:
-- :common
-- :halfling
+- common
+- halfling
 race_powers:
 - name: Lucky
   description: >
@@ -28,7 +28,7 @@ race_powers:
     of a size larger than yours.
 race_variants:
 - name: Lightfoot
-  slug: :lightfoot
+  slug: lightfoot
   ability_scores:
     cha: 1
   race_powers:
@@ -37,7 +37,7 @@ race_variants:
       You can attempt to hide even when you are obscured
       only by a create hatat is at least one size larger than you.
 - name: Stout
-  slug: :stout
+  slug: stout
   ability_scores:
     con: 1
   race_powers:
