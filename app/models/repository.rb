@@ -1,8 +1,6 @@
 class Repository
-  YAML_REGEX = /(.*)\.yml\z/
-
   def self.load(resource_collection_name)
-    repository = Repository.new(resource_collection_name)
+    repository = new(resource_collection_name)
 
     repository.resources
   end
@@ -12,11 +10,7 @@ class Repository
   end
 
   def resources
-    Dir.entries(directory).map do |entry|
-      if entry =~ YAML_REGEX
-        ActiveSupport::HashWithIndifferentAccess.new(load_yaml(entry))
-      end
-    end.reject(&:nil?)
+    directory.each_child.map(&method(:load_yaml))
   end
 
   private
@@ -26,6 +20,6 @@ class Repository
   end
 
   def load_yaml(entry)
-    YAML.load_file(directory.join(entry))
+    YAML.load_file(directory.join(entry)).with_indifferent_access
   end
 end
