@@ -1,6 +1,6 @@
 ---
 name: Elf
-slug: :elf
+slug: elf
 ability_scores:
   dex: 2
 age_range: !ruby/range
@@ -8,15 +8,15 @@ age_range: !ruby/range
   end: 750
   excl: false
 alignemnt:
-- :chaotic
-- :good
-game_size: :medium
+- chaotic
+- good
+game_size: medium
 speed: 30
 skill_proficiencies:
-- :perception
+- perception
 languages:
-- :common
-- :elvish
+- common
+- elvish
 race_powers:
 - name: Darkvision
   description: >
@@ -32,29 +32,29 @@ race_powers:
     semiconscious, for 4 hours a day.
 race_variants:
 - name: High Elf
-  slug: :high_elf
+  slug: high_elf
   ability_scores:
     int: 1
   weapon_proficiencies:
-  - :longsword
-  - :shortsword
-  - :shortbow
-  - :longbow
+  - longsword
+  - shortsword
+  - shortbow
+  - longbow
   race_spells:
-    ability: :int
+    ability: int
     cantrips:
-    - :a_wizard_cantrip
+    - a_wizard_cantrip
   languages:
-  - :any
+  - any
 - name: Wood Elf
-  slug: :wood_elf
+  slug: wood_elf
   ability_scores:
     wis: 1
   weapon_proficiencies:
-  - :longsword
-  - :shortsword
-  - :shortbow
-  - :longbow
+  - longsword
+  - shortsword
+  - shortbow
+  - longbow
   speed: 35
   race_powers:
   - name: Mask of the Wild
@@ -62,13 +62,13 @@ race_variants:
       You can attempt to hide even when you are only lightly obscured by
       foliage, heavy rain, falling snow, mist, and other natural phenomena.
 - name: Dark Elf (Drow)
-  slug: :dark_elf
+  slug: dark_elf
   ability_scores:
     cha: 1
   weapon_proficiencies:
-  - :rapier
-  - :shortsword
-  - :hand_crossbow
+  - rapier
+  - shortsword
+  - hand_crossbow
   race_powers:
   - name: Superior Darkvision
     description: Your darkvision has radius of 120 feet.
@@ -78,15 +78,15 @@ race_variants:
       that rely on sight when you, the target, of your attack, or whatever you
       are trying to perceive is in direct sunlight.
   race_spells:
-    ability: :cha
+    ability: cha
     cantrips:
-    - :dancing_lights
+    - dancing_lights
     levels:
     - level: 3
       times_per_day: 1
       spells:
-      - :faerie_fire
+      - faerie_fire
     - level: 5
       times_per_day: 1
       spells:
-      - :darkness
+      - darkness
