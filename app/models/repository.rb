@@ -10,7 +10,10 @@ class Repository
   end
 
   def resources
-    directory.each_child.map(&method(:load_yaml))
+    directory
+      .each_child
+      .map(&method(:load_yaml))
+      .sort_by(&method(:slug))
   end
 
   private
@@ -21,5 +24,9 @@ class Repository
 
   def load_yaml(entry)
     YAML.load_file(directory.join(entry)).with_indifferent_access
+  end
+
+  def slug(content)
+    content[:slug]
   end
 end
