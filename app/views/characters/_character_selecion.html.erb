@@ -1,20 +1,20 @@
 <div class="character-selected">
   <% if cookies[:race_slug].present? %>
-    Your character: Race: <%= link_to cookies[:race_name], race_path(cookies[:race_slug]) %>
+    Your character: Race: <%= race_link %>
 
     <% if cookies[:race_variant_slug].present? %>
       &nbsp;/&nbsp;
-      Race variant: <%= link_to cookies[:race_variant_name], race_variant_path(cookies[:race_variant_slug], race_id: cookies[:race_slug]) %>
+      Race variant: <%= race_variant_link %>
+    <% end %>
 
-      <% if cookies[:class_slug].present? %>
-        &nbsp;/&nbsp;
-        Class: <%= link_to cookies[:class_name], character_class_path(cookies[:class_slug]) %>
-      <% end %>
+    <% if cookies[:class_slug].present? %>
+      &nbsp;/&nbsp;
+      Class: <%= class_link %>
+    <% end %>
 
-      <% if cookies[:background_slug].present? %>
-        &nbsp;/&nbsp;
-        Backgrounds: <%= link_to cookies[:background_name], background_path(cookies[:background_slug]) %>
-      <% end %>
+    <% if cookies[:background_slug].present? %>
+      &nbsp;/&nbsp;
+      Backgrounds: <%= background_link %>
     <% end %>
   <% end %>
 </div>
