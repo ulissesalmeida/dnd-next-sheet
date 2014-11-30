@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+copy_sample() {
+  local config_file="${1%.*}"
+
+  if [[ ! -f "$config_file" ]]; then
+    cp "$1" "$config_file"
+  fi
+
+  echo "    $config_file"
+}
+
+echo "Copying sample files"
+for sample in $(find config -type f -maxdepth 1 -name '*.sample'); do
+  copy_sample "$sample"
+done
+
+echo "Done"
