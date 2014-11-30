@@ -9,6 +9,6 @@ class Background
     end
   end
 
-  ALL_BACKGROUNDS = Repository.load(:backgrounds)
+  ALL_BACKGROUNDS = Repository.load('backgrounds')
   ALL_BACKGROUNDS_BY_SLUG = ALL_BACKGROUNDS.index_by { |background| background[:slug].to_s }
 end

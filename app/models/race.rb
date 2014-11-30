@@ -13,6 +13,6 @@ class Race
     end
   end
 
-  ALL_RACES = Repository.load(:races)
+  ALL_RACES = Repository.load('races')
   ALL_RACES_BY_SLUG = ALL_RACES.index_by { |race| race[:slug].to_s }
 end
