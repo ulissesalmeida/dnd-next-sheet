@@ -16,7 +16,7 @@ class Repository
   private
 
   def directory
-    @directory ||= Rails.root.join('config', 'seeds', @resource_collection_name.to_s)
+    @directory ||= Rails.root.join('config', 'seeds', @resource_collection_name)
   end
 
   def load_yaml(entry)
