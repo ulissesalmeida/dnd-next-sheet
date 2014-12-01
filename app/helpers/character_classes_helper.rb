@@ -1,12 +1,12 @@
 module CharacterClassesHelper
   MAX_DICE_VALUE = {
-    :d12 => 12,
-    :d10 => 10,
-    :d8 => 8,
-    :d6 => 6,
-    :d4 => 4,
-    :d3 => 3,
-    :d2 => 2,
+    'd12' => 12,
+    'd10' => 10,
+    'd8'  => 8,
+    'd6'  => 6,
+    'd4'  => 4,
+    'd3'  => 3,
+    'd2'  => 2
   }
 
   def hit_points_descritption_for(character_class)

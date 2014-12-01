@@ -1,0 +1,47 @@
+---
+name: Halfling
+slug: halfling
+ability_scores:
+  dex: 2
+age_range: !ruby/range
+  begin: 20
+  end: 150
+  excl: false
+recommended_alignments:
+- lawful
+- good
+game_size: small
+speed: 25
+languages:
+- common
+- halfling
+race_powers:
+- name: Lucky
+  description: >
+    When you roll a 1 on an attack roll, ability check, or
+    saving throw, you can reroll the die and must use the new roll.
+- name: Brave
+  description: You have advantage on saving throws against being frightened.
+- name: Halfing Nimbleness
+  description: >
+    You can move through the space of any creature that is
+    of a size larger than yours.
+race_variants:
+- name: Lightfoot
+  slug: lightfoot
+  ability_scores:
+    cha: 1
+  race_powers:
+  - name: Naturally Stealthy
+    description: >
+      You can attempt to hide even when you are obscured
+      only by a create hatat is at least one size larger than you.
+- name: Stout
+  slug: stout
+  ability_scores:
+    con: 1
+  race_powers:
+  - name: Stout Resilience
+    description: >
+      You have advantage on saving throws against poison,
+      and you have resitance against poison damage.

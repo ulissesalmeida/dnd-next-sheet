@@ -1,12 +1,12 @@
 module GeneralItemsHelper
   ABILITY_MAP = {
-    str: 'Strength',
-    dex: 'Dexterity',
-    con: 'Constitution',
-    int: 'Inteligence',
-    wis: 'Wisdom',
-    cha: 'Charisma'
-  }
+    'str' => 'Strength',
+    'dex' => 'Dexterity',
+    'con' => 'Constitution',
+    'int' => 'Inteligence',
+    'wis' => 'Wisdom',
+    'cha' => 'Charisma'
+  }.with_indifferent_access
 
   def equipments_description_for(resource)
     format_equipments(Array(resource[:equipments])) +
@@ -49,13 +49,13 @@ module GeneralItemsHelper
   def format_items(items)
     if items
       items.map do |item|
-        item == :any ? 'One extra of your choice' : format_item(item)
+        item == 'any' ? 'One extra of your choice' : format_item(item)
       end.to_sentence
     end
   end
 
   def format_item(item)
-    item.to_s.humanize.titleize
+    item.humanize.titleize
   end
 
   def format_ability(ability)

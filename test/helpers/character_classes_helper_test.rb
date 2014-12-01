@@ -4,7 +4,7 @@ class CharacterClassesHelperTest < ActionView::TestCase
   include GeneralItemsHelper
 
   test 'should return the hit points descritption for given hit dice' do
-    features = hit_points_descritption_for(hit_dice: :d12)
+    features = hit_points_descritption_for(hit_dice: 'd12')
 
     assert_equal(
       [
@@ -16,12 +16,12 @@ class CharacterClassesHelperTest < ActionView::TestCase
 
   test 'should return proficiencies descritptions for given class' do
     features = proficiencies_descritption_for(
-      armor_proficiencies: [:light, :heavy],
-      weapon_proficiencies: [:simple, :martial],
-      saving_throw_proficiencies: [:str, :con],
+      armor_proficiencies: ['light', 'heavy'],
+      weapon_proficiencies: ['simple', 'martial'],
+      saving_throw_proficiencies: ['str', 'con'],
       skills_proficiencies_option: {
         quantity: 2,
-        items: [:animal_handling, :athletics]
+        items: ['animal_handling', 'athletics']
       }
     )
 
@@ -37,22 +37,22 @@ class CharacterClassesHelperTest < ActionView::TestCase
   test 'should format the equipment descritption for given class' do
     descriptions = equipments_description_for(
       equipments: [
-        { item: :javelin, quantity: 1 },
-        { item: :javelin, quantity: 4 }
+        { item: 'javelin', quantity: 1 },
+        { item: 'javelin', quantity: 4 }
       ],
       equipment_options: [
         {
           quantity: 1,
           items: [
-            { item: :greataxe, quantity: 1 },
-            { item: :any_melee_martial_weapon, quantity: 1 }
+            { item: 'greataxe', quantity: 1 },
+            { item: 'any_melee_martial_weapon', quantity: 1 }
           ]
         },
         {
           quantity: 1,
           items: [
-            { item: :handaxe, quantity: 2 },
-            { item: :any_simple_weapon, quantity: 1}
+            { item: 'handaxe', quantity: 2 },
+            { item: 'any_simple_weapon', quantity: 1}
           ]
         }
       ]
@@ -73,7 +73,7 @@ class CharacterClassesHelperTest < ActionView::TestCase
     values = character_class_level_format(
       level: 1,
       proficiency_bonus: 2,
-      features: [:rage, :unarmored_defense],
+      features: ['rage', 'unarmored_defense'],
       rages: 2,
       rage_damage: 2
     )

@@ -34,7 +34,7 @@ module RacesHelper
   def format_recommended_alignments(alignments)
     if alignments
       alignments.map do |alignment|
-        alignment == :any ? 'Any alignment' : format_item(alignment)
+        alignment == 'any' ? 'Any alignment' : format_item(alignment)
       end.to_sentence
     end
   end
