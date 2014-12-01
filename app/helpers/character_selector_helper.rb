@@ -1,6 +1,6 @@
 module CharacterSelectorHelper
   def character_sheet
-    character_sheet = JSON.parse(cookies[:character_sheet])
+    JSON.parse(cookies[:character_sheet])
   end
 
   def race_link

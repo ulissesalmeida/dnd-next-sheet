@@ -45,8 +45,3 @@
     <% end %>
   <% end %>
 <% end %>
-
-<%= form_for :races, url: params[:controller].to_sym do |f| %>
-  <%= f.hidden_field :race_slug, :value => race[:slug] %>
-  <%= f.submit "Select" %>
-<% end %>
