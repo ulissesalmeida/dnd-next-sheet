@@ -12,5 +12,11 @@
     <%= render 'race_variants/list', race: @race, race_variant: @race_variant %>
 
     <%= render 'races/game_information', race: @race_variant %>
+
+    <%= form_for :race_variants, url: :race_variants do |f| %>
+    <%= f.hidden_field :race_slug, :value => @race[:slug] %>
+    <%= f.hidden_field :race_variant_slug, :value => @race_variant[:slug] %>
+    <%= f.submit "Select" %>
+    <% end %>
   </div>
 </section>
