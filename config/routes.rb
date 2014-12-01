@@ -10,3 +10,4 @@ Rails.application.routes.draw do
   resources :character_classes, only: [:index, :show], path: 'classes'
   resources :backgrounds, only: [:index, :show]
 end
+:create
