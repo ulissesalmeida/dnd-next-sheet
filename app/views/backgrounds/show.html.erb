@@ -29,3 +29,8 @@
 <h3>Feature: <%= @background[:feature][:name] %></h3>
 
 <%= raw @background[:feature][:description] %>
+
+<%= form_for :backgrounds, url: :backgrounds do |f| %>
+  <%= f.hidden_field :background_slug, :value => @background[:slug] %>
+  <%= f.submit "Select" %>
+<% end %>

@@ -55,3 +55,8 @@
   <p><strong>Level:</strong> <%= feature[:level] %></p>
   <%= raw feature[:description] %>
 <% end %>
+
+<%= form_for :character_classes, url: :character_classes do |f| %>
+  <%= f.hidden_field :class_slug, :value => @character_class[:slug] %>
+  <%= f.submit "Select" %>
+<% end %>
