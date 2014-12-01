@@ -9,8 +9,10 @@ class CharacterClassesController < ApplicationController
   end
 
   def create
-    character_class_slug = params[:character_classes][:class_slug].to_sym
-    cookies[:class_slug] = character_class_slug
+    character_class_slug = params[:character_classes][:class_slug]
+    character_sheet  = JSON.parse(cookies[:character_sheet]) if cookies[:character_sheet].present?
+    character_sheet[:class_slug] = character_class_slug
+    cookies[:character_sheet] = character_sheet.to_json
 
     redirect_to backgrounds_path
   end
