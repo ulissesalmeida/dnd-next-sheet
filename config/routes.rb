@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'races#index'
   resources :races, only: [:index, :show] do
-    resources :variants, only: [:show,], controller: 'race_variants'
+    resources :variants, only: [:show], controller: 'race_variants'
   end
   post 'races/:id' => 'races#create'
   post 'races/:id/variants/:id' => 'race_variants#create'
