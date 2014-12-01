@@ -43,9 +43,10 @@
       <%= format_items(level[:spells]) %>
     </p>
     <% end %>
-  <% end %>  
+  <% end %>
 <% end %>
 
-<%= form_for :races do |f| %>
+<%= form_for :races, url: params[:controller] do |f| %>
+  <%= f.hidden_field :race_slug, :value => race[:slug] %>
   <%= f.submit "Select" %>
 <% end %>

@@ -6,19 +6,9 @@ class RaceVariantsController < ApplicationController
   end
 
   def create
-    if cookies[:race_slug].present?
-      race_variant = Race.find_variant_by_slug(cookies[:race_slug], params[:id])
+    race_variant_slug = params[:races][:race_slug].to_sym
+    cookies[:race_variant_slug] = race_variant_slug
 
-      if (race_variant != nil)
-        cookies[:race_variant_name] = race_variant[:name]
-        cookies[:race_variant_slug] = race_variant[:slug]
-
-        redirect_to character_classes_path
-        return
-      else
-        cookies.delete :race_slug
-        cookies.delete :race_name
-      end
-    end
+    redirect_to character_classes_path
   end
 end
