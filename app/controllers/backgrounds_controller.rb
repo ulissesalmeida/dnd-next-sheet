@@ -9,8 +9,10 @@ class BackgroundsController < ApplicationController
   end
 
   def create
-    background_slug = params[:backgrounds][:background_slug].to_sym
-    cookies[:background_slug] = background_slug
+    background_slug = params[:backgrounds][:background_slug]
+    character_sheet  = JSON.parse(cookies[:character_sheet]) if cookies[:character_sheet].present?
+    character_sheet[:background_slug] = background_slug
+    cookies[:character_sheet] = character_sheet.to_json
 
     redirect_to root_path
   end
