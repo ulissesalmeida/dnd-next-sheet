@@ -12,6 +12,8 @@ class RacesController < ApplicationController
     race_slug = params[:races][:race_slug].to_sym
     cookies[:race_slug] = race_slug
 
+    cookies.delete :race_variant_slug
+
     redirect_to race_path(race_slug)
   end
 end
