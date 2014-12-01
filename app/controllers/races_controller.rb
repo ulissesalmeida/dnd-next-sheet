@@ -9,12 +9,9 @@ class RacesController < ApplicationController
   end
 
   def create
-    race = Race.find_by_slug(params[:id])
-    cookies[:race_name] = race[:name]
-    cookies[:race_slug] = race[:slug]
-    cookies.delete :race_variant_name
-    cookies.delete :race_variant_slug
+    race_slug = params[:races][:race_slug].to_sym
+    cookies[:race_slug] = race_slug
 
-    redirect_to race_path(params[:id])
+    redirect_to race_path(race_slug)
   end
 end

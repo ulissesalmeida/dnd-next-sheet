@@ -9,9 +9,8 @@ class CharacterClassesController < ApplicationController
   end
 
   def create
-    character_class = CharacterClass.find_by_slug(params[:id])
-    cookies[:class_name] = character_class[:name]
-    cookies[:class_slug] = character_class[:slug]
+    character_class_slug = params[:character_classes][:class_slug].to_sym
+    cookies[:class_slug] = character_class_slug
 
     redirect_to backgrounds_path
   end

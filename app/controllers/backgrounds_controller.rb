@@ -9,9 +9,8 @@ class BackgroundsController < ApplicationController
   end
 
   def create
-    background = Background.find_by_slug(params[:id])
-    cookies[:background_name] = background[:name]
-    cookies[:background_slug] = background[:slug]
+    background_slug = params[:backgrounds][:background_slug].to_sym
+    cookies[:background_slug] = background_slug
 
     redirect_to root_path
   end
