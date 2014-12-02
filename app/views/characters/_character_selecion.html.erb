@@ -1,5 +1,5 @@
 <div class="character-selected">
-  <% if character_sheet["race_slug"].present? %>
+  <% if character_sheet["race_slug"] %>
     Your character: Race: <%= race_link %>
 
     <% if character_sheet["race_variant_slug"].present? %>
@@ -7,7 +7,7 @@
       Race variant: <%= race_variant_link %>
     <% end %>
 
-    <% if character_sheet["class_slug"].present? %>
+    <% if character_sheet["character_class_slug"].present? %>
       &nbsp;/&nbsp;
       Class: <%= class_link %>
     <% end %>

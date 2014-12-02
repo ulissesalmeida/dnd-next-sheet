@@ -30,7 +30,7 @@
 
 <%= raw @background[:feature][:description] %>
 
-<%= form_for :backgrounds, url: :backgrounds do |f| %>
+<%= form_for :character_sheet, method: :put, url: background_character_sheets_path do |f| %>
   <%= f.hidden_field :background_slug, :value => @background[:slug] %>
   <%= f.submit "Select" %>
 <% end %>

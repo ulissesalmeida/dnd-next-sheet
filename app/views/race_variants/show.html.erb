@@ -13,10 +13,10 @@
 
     <%= render 'races/game_information', race: @race_variant %>
 
-    <%= form_for :race_variants, url: :race_variants do |f| %>
-    <%= f.hidden_field :race_slug, :value => @race[:slug] %>
-    <%= f.hidden_field :race_variant_slug, :value => @race_variant[:slug] %>
-    <%= f.submit "Select" %>
+    <%= form_for :character_sheet, method: :put, url: race_variant_character_sheets_path do |f| %>
+      <%= f.hidden_field :race_slug, :value => @race[:slug] %>
+      <%= f.hidden_field :race_variant_slug, :value => @race_variant[:slug] %>
+      <%= f.submit "Select" %>
     <% end %>
   </div>
 </section>

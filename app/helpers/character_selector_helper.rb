@@ -1,6 +1,10 @@
 module CharacterSelectorHelper
   def character_sheet
-    JSON.parse(cookies[:character_sheet])
+    if cookies[:character_sheet]
+      JSON.parse(cookies[:character_sheet])
+    else
+      {}
+    end
   end
 
   def race_link
@@ -14,7 +18,7 @@ module CharacterSelectorHelper
   end
 
   def class_link
-    character_class = CharacterClass.find_by_slug(character_sheet["class_slug"])
+    character_class = CharacterClass.find_by_slug(character_sheet["character_class_slug"])
     link_to character_class[:name], character_class_path(character_class[:slug])
   end
 
