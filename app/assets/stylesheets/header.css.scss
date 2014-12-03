@@ -1,10 +1,14 @@
-.character-menu {
+.character-steps-list {
   margin: 0 auto;
-  padding-left: 40%;
+  padding: 0;
+  overflow: hidden;
+  width: 1140px;
+  margin-bottom: 10px;
 }
-.character-menu li {
-  display: inline-block;
-  line-height: 50px;
-  padding: 0 20px;
-  text-decoration: none;
+
+.character-steps-list li {
+  display: block;
+  float: left;
+  border: solid 1px #ccc;
+  margin-right: 10px;
 }
