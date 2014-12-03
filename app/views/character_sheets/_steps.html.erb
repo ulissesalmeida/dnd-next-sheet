@@ -1,0 +1,40 @@
+<nav>
+  <ul class="character-steps-list">
+    <li>
+      <%= link_to 'Races', races_path %>
+      <% if character_sheet.race_variant %>
+        <p>
+          <%= link_to(
+                character_sheet.race_variant[:name],
+                race_variant_path(
+                  character_sheet.race[:slug],
+                  character_sheet.race_variant[:slug]
+                )
+              ) %>
+        </p>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to 'Classes', character_classes_path %>
+      <% if character_sheet.character_class %>
+        <p>
+          <%= link_to(
+                character_sheet.character_class[:name],
+                character_class_path(character_sheet.character_class[:slug])
+              ) %>
+        </p>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to 'Backgrounds', backgrounds_path %>
+      <% if character_sheet.background %>
+        <p>
+          <%= link_to(
+                character_sheet.background[:name],
+                background_path(character_sheet.background[:slug])
+              ) %>
+        </p>
+      <% end %>
+    </li>
+  </ul>
+</nav>
