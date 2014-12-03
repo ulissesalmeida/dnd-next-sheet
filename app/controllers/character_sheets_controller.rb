@@ -32,13 +32,6 @@ class CharacterSheetsController < ApplicationController
 
   private
 
-  def character_sheet
-    @character_sheet ||= begin
-      attributes = cookies[:character_sheet] ? JSON.parse(cookies[:character_sheet]) : {}
-      CharacterSheet.new(attributes)
-    end
-  end
-
   def save_character_sheet
     cookies[:character_sheet] = character_sheet.to_json
   end

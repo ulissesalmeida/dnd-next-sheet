@@ -20,4 +20,10 @@ class RaceTest < ActiveSupport::TestCase
 
     assert_equal('Wood Elf', variant[:name])
   end
+
+  test 'should return nil when the race slug is invalid' do
+    variant = Race.find_variant_by_slug('invalid', 'wood_elf')
+
+    assert_nil(variant)
+  end
 end

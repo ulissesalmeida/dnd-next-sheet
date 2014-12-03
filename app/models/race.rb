@@ -9,7 +9,10 @@ class Race
     end
 
     def find_variant_by_slug(race_slug, variant_slug)
-      ALL_RACES_BY_SLUG[race_slug][:race_variants].find { |variant| variant[:slug] == variant_slug }
+      race = find_by_slug(race_slug)
+      if race
+        race[:race_variants].find { |variant| variant[:slug] == variant_slug }
+      end
     end
   end
 
