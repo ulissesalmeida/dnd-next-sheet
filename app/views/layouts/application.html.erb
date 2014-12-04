@@ -7,6 +7,10 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <header>
+      <%= render 'character_sheets/steps' %>
+    </header>
+
     <%= yield %>
   </body>
 </html>

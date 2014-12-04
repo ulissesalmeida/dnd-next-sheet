@@ -1,0 +1,14 @@
+.character-steps-list {
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  width: 1140px;
+  margin-bottom: 10px;
+}
+
+.character-steps-list li {
+  display: block;
+  float: left;
+  border: solid 1px #ccc;
+  margin-right: 10px;
+}
