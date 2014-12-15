@@ -1,13 +1,10 @@
 class CharacterSheet
-  attr_accessor :race_slug, :race_variant_slug, :character_class_slug,
-    :background_slug
+  include ActiveModel::Model
 
-  def initialize(attributes)
-    self.race_slug = attributes['race_slug']
-    self.race_variant_slug = attributes['race_variant_slug']
-    self.character_class_slug = attributes['character_class_slug']
-    self.background_slug = attributes['background_slug']
-  end
+  attr_accessor :age, :alignment, :background_slug, :backstory, :bond,
+    :character_class_slug, :eyes, :flaw, :hair, :height, :ideal, :languages,
+    :name, :personality_traits, :picture_url, :player_name, :race_slug,
+    :race_variant_slug, :skin, :weight
 
   def race
     Race.find_by_slug(race_slug)

@@ -30,6 +30,12 @@ class CharacterSheetsController < ApplicationController
     redirect_to root_path
   end
 
+  def edit_details
+  end
+
+  def update_details
+  end
+
   private
 
   def save_character_sheet

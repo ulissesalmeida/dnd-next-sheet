@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       put 'race_variant'
       put 'background'
       put 'character_class'
+      get 'edit_details'
     end
   end
 end

@@ -1,0 +1,88 @@
+
+<h1>Character Details</h1>
+<%= form_for character_sheet, method: :put, url: '' do |f| %>
+  <div>
+    <img src="">
+    <p>Character picture</p>
+  </div>
+
+  <div>
+    <%= f.label :name, 'Character name' %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :player_name %>
+    <%= f.text_field :player_name %>
+  </div>
+
+  <div>
+    <%= f.label :alignment %>
+    <%= f.select :alignment, alignments %>
+  </div>
+
+  <div>
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </div>
+
+  <div>
+    <%= f.label :height %>
+    <%= f.text_field :height %>
+  </div>
+
+  <div>
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
+  </div>
+
+  <div>
+    <%= f.label :eyes %>
+    <%= f.text_field :eyes %>
+  </div>
+
+  <div>
+    <%= f.label :skin %>
+    <%= f.text_field :skin %>
+  </div>
+
+  <div>
+    <%= f.label :hair %>
+    <%= f.text_field :hair %>
+  </div>
+
+  <div>
+    <%= f.label :personality_traits %>
+    <%= f.text_area :personality_traits %>
+  </div>
+
+  <div>
+    <%= f.label :ideal %>
+    <%= f.text_area :ideal %>
+  </div>
+
+  <div>
+    <%= f.label :bond %>
+    <%= f.text_area :bond %>
+  </div>
+
+  <div>
+    <%= f.label :flaw %>
+    <%= f.text_area :flaw %>
+  </div>
+
+  <div>
+    <%= f.label :flaw %>
+    <%= f.text_area :flaw %>
+  </div>
+
+  <div>
+    <%= f.label :languages %>
+    <%= f.collection_check_boxes(:languages, [], :slug, :name) %>
+  </div>
+
+  <div>
+    <%= f.label :backstory %>
+    <%= f.text_area :backstory %>
+  </div>
+<% end %>
